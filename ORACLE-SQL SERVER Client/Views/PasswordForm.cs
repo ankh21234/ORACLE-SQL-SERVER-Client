@@ -13,7 +13,7 @@ namespace ORACLE_SQL_SERVER_Client.Views
 {
     public partial class PasswordForm : Form
     {
-        public PasswordForm(string name, MainWindow window)
+        public PasswordForm(string name)
         {
             InitializeComponent();
             if (name == "OracleButton")
@@ -42,7 +42,8 @@ namespace ORACLE_SQL_SERVER_Client.Views
 
         private void CancelButton_Click(object sender, EventArgs e)
         {
-
+            new MainWindow().Show();
+            this.Dispose();
         }
 
         private void ConnectionButton_Click(object sender, EventArgs e)
@@ -52,11 +53,17 @@ namespace ORACLE_SQL_SERVER_Client.Views
                 SQLServerConnection databaseConnection = SQLServerConnection.getConnectionObject(this.ConnectionDetailsText1.Text,
                     this.ConnectionDetailsText2.Text, this.ConnectionDetailsText3.Text);
             }
+            else
+            {
+                OracleDBConnection databaseConnection = OracleDBConnection.getConnectionObject(this.ConnectionDetailsText1.Text,
+                    this.ConnectionDetailsText2.Text, this.ConnectionDetailsText4.Text);
+                String result = databaseConnection.createConnection();
+                Console.WriteLine(result);
+            }
         }
-
-        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        private void PasswordForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-
+            Application.Exit();
         }
     }
 }

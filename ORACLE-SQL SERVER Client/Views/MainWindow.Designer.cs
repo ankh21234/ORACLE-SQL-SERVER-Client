@@ -43,6 +43,7 @@
             this.MainWindowContainer.Name = "MainWindowContainer";
             this.MainWindowContainer.Size = new System.Drawing.Size(462, 108);
             this.MainWindowContainer.TabIndex = 0;
+            this.MainWindowContainer.UseWaitCursor = true;
             this.MainWindowContainer.Paint += new System.Windows.Forms.PaintEventHandler(this.MainWindowContainer_Paint);
             // 
             // SQLServerButton
@@ -54,6 +55,7 @@
             this.SQLServerButton.TabIndex = 1;
             this.SQLServerButton.Text = "SQLServer";
             this.SQLServerButton.UseVisualStyleBackColor = true;
+            this.SQLServerButton.UseWaitCursor = true;
             this.SQLServerButton.Click += new System.EventHandler(this.SQLServerButton_Click);
             // 
             // OracleButton
@@ -65,6 +67,7 @@
             this.OracleButton.TabIndex = 0;
             this.OracleButton.Text = "Oracle";
             this.OracleButton.UseVisualStyleBackColor = true;
+            this.OracleButton.UseWaitCursor = true;
             this.OracleButton.Click += new System.EventHandler(this.OracleButton_Click);
             // 
             // MainWindow
@@ -84,6 +87,7 @@
             this.RightToLeftLayout = true;
             this.Text = "Main Window ";
             this.UseWaitCursor = true;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainWindow_FormClosing);
             this.Load += new System.EventHandler(this.MainWindow_Load);
             this.MainWindowContainer.ResumeLayout(false);
             this.ResumeLayout(false);

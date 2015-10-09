@@ -25,8 +25,8 @@ namespace ORACLE_SQL_SERVER_Client
 
         private void OracleButton_Click(object sender, EventArgs e)
         {
-            new PasswordForm(this.OracleButton.Name, this).Show();
-            this.Hide();
+            new PasswordForm(this.OracleButton.Name).Show();
+            this.Dispose();
         }
 
         private void MainWindowContainer_Paint(object sender, PaintEventArgs e)
@@ -36,8 +36,13 @@ namespace ORACLE_SQL_SERVER_Client
 
         private void SQLServerButton_Click(object sender, EventArgs e)
         {
-            new PasswordForm(this.SQLServerButton.Name,this).Show();
-            this.Hide();
+            new PasswordForm(this.SQLServerButton.Name).Show();
+            this.Dispose();
+        }
+
+        private void MainWindow_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

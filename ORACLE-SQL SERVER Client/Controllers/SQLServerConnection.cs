@@ -21,20 +21,6 @@ namespace ORACLE_SQL_SERVER_Client.Controllers
             this.serverName = pServerName;
             this.databaseName = pDatabaseName;
             this.username = pUsername;
-            connection = "Server =" + this.serverName + ";Database =" + this.databaseName +
-                ";Integrated Security= true; user = " + this.username;
-            dbConnection = new SqlConnection(connection);
-
-            try
-            {
-                dbConnection.Open();
-                Console.WriteLine("Connection Works");
-            }
-            catch (Exception e)
-            {
-                String error = e.ToString();
-                Console.WriteLine(error);
-            }
         }
 
         public static SQLServerConnection getConnectionObject(String pServerName, String pDatabaseName, String pUsername)
@@ -44,6 +30,28 @@ namespace ORACLE_SQL_SERVER_Client.Controllers
                 instance = new SQLServerConnection(pServerName, pDatabaseName, pUsername);
             }
             return instance;
+        }
+
+        public String createConnection()
+        {
+            connection = "Server =" + this.serverName + ";Database =" + this.databaseName +
+            ";Integrated Security= true; user = " + this.username;
+            dbConnection = new SqlConnection(connection);
+
+            try
+            {
+                dbConnection.Open();
+                return "Success";
+            }
+            catch (Exception e)
+            {
+                String error = e.ToString();
+                return error;
+            }
+            finally
+            {
+                dbConnection.Dispose();
+            }
         }
 
         public SqlConnection getDatabaseConnection()

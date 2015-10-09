@@ -16,7 +16,8 @@ namespace ORACLE_SQL_SERVER_Client
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainWindow());
+            new MainWindow().Show();
+            Application.Run();
         }
     }
 }
