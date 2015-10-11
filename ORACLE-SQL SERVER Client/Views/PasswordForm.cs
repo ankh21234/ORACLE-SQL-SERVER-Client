@@ -58,7 +58,7 @@ namespace ORACLE_SQL_SERVER_Client.Views
                 OracleDBConnection databaseConnection = OracleDBConnection.getConnectionObject(this.ConnectionDetailsText1.Text,
                     this.ConnectionDetailsText2.Text, this.ConnectionDetailsText4.Text);
                 String result = databaseConnection.createConnection();
-                Console.WriteLine(result);
+                MessageBox.Show(result);
             }
         }
         private void PasswordForm_FormClosing(object sender, FormClosingEventArgs e)

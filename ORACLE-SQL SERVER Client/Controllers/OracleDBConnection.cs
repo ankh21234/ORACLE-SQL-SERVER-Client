@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Oracle.DataAccess.Client;
+using Oracle.ManagedDataAccess.Client;
 
 namespace ORACLE_SQL_SERVER_Client.Controllers
 {
@@ -25,7 +25,7 @@ namespace ORACLE_SQL_SERVER_Client.Controllers
 
         public String createConnection()
         {
-            connection = "Data Source=" + this.SID +";"+ "User Id=" + this.username +";" + "Password=" + this.password +";";
+            connection = String.Format("Data Source={0};User Id={1};Password={2};", this.SID, this.username, this.password);
             dbConnection = new OracleConnection();
             try
             {
@@ -35,7 +35,8 @@ namespace ORACLE_SQL_SERVER_Client.Controllers
             }
             catch (Exception e)
             {
-                String error = e.ToString();
+                String error = e.Message.ToString();
+                Console.WriteLine(e.ToString());
                 return error;
             }
 
