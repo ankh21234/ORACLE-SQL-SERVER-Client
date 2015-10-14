@@ -100,6 +100,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Views\OracleView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\OracleView.Designer.cs">
+      <DependentUpon>OracleView.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\PasswordForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -119,6 +125,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Views\OracleView.resx">
+      <DependentUpon>OracleView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\PasswordForm.resx">
       <DependentUpon>PasswordForm.cs</DependentUpon>
     </EmbeddedResource>

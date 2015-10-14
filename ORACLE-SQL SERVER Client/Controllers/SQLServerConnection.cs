@@ -7,29 +7,19 @@ using System.Threading.Tasks;
 
 namespace ORACLE_SQL_SERVER_Client.Controllers
 {
-    class SQLServerConnection
+    public class SQLServerConnection
     {
-        private static SQLServerConnection instance = null;
         private String serverName;
         private String databaseName;
         private String username;
         private String connection;
         private SqlConnection dbConnection;
 
-        private SQLServerConnection(String pServerName, String pDatabaseName, String pUsername)
+        public SQLServerConnection(String pServerName, String pDatabaseName, String pUsername)
         {
             this.serverName = pServerName;
             this.databaseName = pDatabaseName;
             this.username = pUsername;
-        }
-
-        public static SQLServerConnection getConnectionObject(String pServerName, String pDatabaseName, String pUsername)
-        {
-            if (instance == null)
-            {
-                instance = new SQLServerConnection(pServerName, pDatabaseName, pUsername);
-            }
-            return instance;
         }
 
         public String createConnection()
@@ -41,16 +31,12 @@ namespace ORACLE_SQL_SERVER_Client.Controllers
             try
             {
                 dbConnection.Open();
-                return "Success";
+                return "Connection established. Press OK to continue.";
             }
             catch (Exception e)
             {
                 String error = e.ToString();
                 return error;
-            }
-            finally
-            {
-                dbConnection.Dispose();
             }
         }
 

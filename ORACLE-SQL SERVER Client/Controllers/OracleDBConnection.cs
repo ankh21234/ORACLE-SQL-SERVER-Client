@@ -7,16 +7,15 @@ using Oracle.ManagedDataAccess.Client;
 
 namespace ORACLE_SQL_SERVER_Client.Controllers
 {
-    class OracleDBConnection
+    public class OracleDBConnection
     {
-        private static OracleDBConnection instance = null;
         private String SID;
         private String username;
         private String password;
         private String connection;
         private OracleConnection dbConnection;
 
-        private OracleDBConnection(String pServerName, String pUsername, String pPassword)
+        public OracleDBConnection(String pServerName, String pUsername, String pPassword)
         {
             this.SID = pServerName;
             this.username = pUsername;
@@ -31,7 +30,7 @@ namespace ORACLE_SQL_SERVER_Client.Controllers
             {
                 dbConnection.ConnectionString = connection;
                 dbConnection.Open();
-                return "Success";
+                return "Connection Established. Press OK to continue.";
             }
             catch (Exception e)
             {
@@ -40,24 +39,16 @@ namespace ORACLE_SQL_SERVER_Client.Controllers
                 return error;
             }
 
-            finally
-            {
-                dbConnection.Dispose();
-            }
-        }
-
-        public static OracleDBConnection getConnectionObject(String pServerName, String pUsername, String pPassword)
-        {
-            if (instance == null)
-            {
-                instance = new OracleDBConnection(pServerName, pUsername, pPassword);
-            }
-            return instance;
         }
 
         public OracleConnection getDatabaseConnection()
         {
             return dbConnection;
+        }
+
+        public String getUsername()
+        {
+            return username;
         }
     }
 }

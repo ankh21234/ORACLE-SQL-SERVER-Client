@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Oracle.ManagedDataAccess.Client;
+using System.Data.SqlClient;
 using ORACLE_SQL_SERVER_Client.Controllers;
 
 namespace ORACLE_SQL_SERVER_Client.Views
@@ -50,15 +52,24 @@ namespace ORACLE_SQL_SERVER_Client.Views
         {
             if (this.ConnectionDetails1.Text == "Server Name")
             {
-                SQLServerConnection databaseConnection = SQLServerConnection.getConnectionObject(this.ConnectionDetailsText1.Text,
+                SQLServerConnection databaseConnection = new SQLServerConnection(this.ConnectionDetailsText1.Text,
                     this.ConnectionDetailsText2.Text, this.ConnectionDetailsText3.Text);
+                String result = databaseConnection.createConnection();
+                MessageBox.Show(result);
+                SqlConnection dbConnection = databaseConnection.getDatabaseConnection();
+           
             }
             else
             {
-                OracleDBConnection databaseConnection = OracleDBConnection.getConnectionObject(this.ConnectionDetailsText1.Text,
+                OracleDBConnection databaseConnection = new OracleDBConnection(this.ConnectionDetailsText1.Text,
                     this.ConnectionDetailsText2.Text, this.ConnectionDetailsText4.Text);
                 String result = databaseConnection.createConnection();
                 MessageBox.Show(result);
+                if (result == "Connection Established. Press OK to continue.")
+                {
+                    new OracleView(databaseConnection).Show();
+                    this.Dispose();
+                }
             }
         }
         private void PasswordForm_FormClosing(object sender, FormClosingEventArgs e)
