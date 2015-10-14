@@ -53,11 +53,16 @@ namespace ORACLE_SQL_SERVER_Client.Views
             if (this.ConnectionDetails1.Text == "Server Name")
             {
                 SQLServerConnection databaseConnection = new SQLServerConnection(this.ConnectionDetailsText1.Text,
-                    this.ConnectionDetailsText2.Text, this.ConnectionDetailsText3.Text);
+                    this.ConnectionDetailsText2.Text, this.ConnectionDetailsText3.Text, this.ConnectionDetailsText4.Text);
                 String result = databaseConnection.createConnection();
                 MessageBox.Show(result);
                 SqlConnection dbConnection = databaseConnection.getDatabaseConnection();
-           
+                if (result == "Connection Established. Press OK to continue.")
+                {
+                    new SQLServerView(databaseConnection).Show();
+                    this.Dispose();
+                }
+
             }
             else
             {

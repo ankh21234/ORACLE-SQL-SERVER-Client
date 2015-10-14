@@ -12,30 +12,41 @@ namespace ORACLE_SQL_SERVER_Client.Controllers
         private String serverName;
         private String databaseName;
         private String username;
+        private String password;
         private String connection;
         private SqlConnection dbConnection;
 
-        public SQLServerConnection(String pServerName, String pDatabaseName, String pUsername)
+        public SQLServerConnection(String pServerName, String pDatabaseName, String pUsername, String pPassword = "")
         {
             this.serverName = pServerName;
             this.databaseName = pDatabaseName;
             this.username = pUsername;
+            this.password = pPassword;
         }
 
         public String createConnection()
         {
-            connection = "Server =" + this.serverName + ";Database =" + this.databaseName +
-            ";Integrated Security= true; user = " + this.username;
-            dbConnection = new SqlConnection(connection);
+            if (password == "")
+            {
+                connection = "Server =" + this.serverName + ";Database =" + this.databaseName +
+                ";Integrated Security= true; user = " + this.username;
+                dbConnection = new SqlConnection(connection);
+            }
+            else
+            {
+                connection = "Server =" + this.serverName + ";Database =" + this.databaseName +
+                ";Integrated Security= true; user = " + this.username + ";password =" + this.password;
+                dbConnection = new SqlConnection(connection);
+            }
 
             try
             {
                 dbConnection.Open();
-                return "Connection established. Press OK to continue.";
+                return "Connection Established. Press OK to continue.";
             }
             catch (Exception e)
             {
-                String error = e.ToString();
+                String error = e.Message.ToString();
                 return error;
             }
         }
@@ -44,5 +55,17 @@ namespace ORACLE_SQL_SERVER_Client.Controllers
         {
             return dbConnection;
         }
+
+        public  String getServerName()
+        {
+            return serverName;
+        }
+
+        public String getUsername()
+        {
+            return username;
+        }
+
+        
     }
 }

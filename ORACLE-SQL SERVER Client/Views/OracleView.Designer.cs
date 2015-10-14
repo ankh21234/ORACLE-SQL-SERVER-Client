@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OracleView));
-            this.label1 = new System.Windows.Forms.Label();
             this.OracleConsole = new System.Windows.Forms.RichTextBox();
             this.OracleResults = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -38,18 +37,14 @@
             this.ExecutionPlanButton = new System.Windows.Forms.Button();
             this.ExecuteQueryButton = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.HostName = new System.Windows.Forms.Label();
-            this.DatabaseName = new System.Windows.Forms.Label();
             this.Username = new System.Windows.Forms.Label();
+            this.DatabaseName = new System.Windows.Forms.Label();
+            this.HostName = new System.Windows.Forms.Label();
+            this.treeView1 = new System.Windows.Forms.TreeView();
             ((System.ComponentModel.ISupportInitialize)(this.OracleResults)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // label1
-            // 
-            resources.ApplyResources(this.label1, "label1");
-            this.label1.Name = "label1";
             // 
             // OracleConsole
             // 
@@ -108,30 +103,35 @@
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.TabStop = false;
             // 
-            // HostName
+            // Username
             // 
-            resources.ApplyResources(this.HostName, "HostName");
-            this.HostName.Name = "HostName";
+            resources.ApplyResources(this.Username, "Username");
+            this.Username.Name = "Username";
             // 
             // DatabaseName
             // 
             resources.ApplyResources(this.DatabaseName, "DatabaseName");
             this.DatabaseName.Name = "DatabaseName";
             // 
-            // Username
+            // HostName
             // 
-            resources.ApplyResources(this.Username, "Username");
-            this.Username.Name = "Username";
+            resources.ApplyResources(this.HostName, "HostName");
+            this.HostName.Name = "HostName";
+            // 
+            // treeView1
+            // 
+            resources.ApplyResources(this.treeView1, "treeView1");
+            this.treeView1.Name = "treeView1";
             // 
             // OracleView
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.treeView1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.OracleResults);
             this.Controls.Add(this.OracleConsole);
-            this.Controls.Add(this.label1);
             this.Name = "OracleView";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.OracleView_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.OracleResults)).EndInit();
@@ -139,13 +139,10 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.RichTextBox OracleConsole;
         private System.Windows.Forms.DataGridView OracleResults;
         private System.Windows.Forms.GroupBox groupBox1;
@@ -158,5 +155,6 @@
         private System.Windows.Forms.Label Username;
         private System.Windows.Forms.Label DatabaseName;
         private System.Windows.Forms.Label HostName;
+        private System.Windows.Forms.TreeView treeView1;
     }
 }

@@ -7,38 +7,41 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 using ORACLE_SQL_SERVER_Client.Controllers;
-using Oracle.ManagedDataAccess.Client;
-
 
 namespace ORACLE_SQL_SERVER_Client.Views
 {
-    public partial class OracleView : Form
+    public partial class SQLServerView : Form
     {
-        public OracleView(OracleDBConnection connection)
+        public SQLServerView(SQLServerConnection connection)
         {
             InitializeComponent();
             this.dbConnection = connection;
-            this.DatabaseName.Text += " " + connection.getDatabaseConnection().DataSource;
-            this.HostName.Text += " " +connection.getDatabaseConnection().HostName;
-            this.Username.Text += " " + connection.getUsername();
+            this.HostName.Text += connection.getServerName();
+            this.DatabaseName.Text += connection.getDatabaseConnection().Database;
+            this.Username.Text += connection.getUsername();
 
 
         }
 
+        private void SQLServerView_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
+
         private void ExecuteQueryButton_Click(object sender, EventArgs e)
         {
-            if (this.OracleConsole.Text != "")
+            if (this.SQLServerConsole.Text != "")
             {
-                String [] array;
-                String query = this.OracleConsole.Text;
+                String[] array;
+                String query = this.SQLServerConsole.Text;
                 String operation;
-                String invalidOperation;
                 this.dbConnection.createConnection();
-                OracleConnection dbConnection = this.dbConnection.getDatabaseConnection();
+                SqlConnection dbConnection = this.dbConnection.getDatabaseConnection();
                 query.ToUpper();
-                OracleCommand command = new OracleCommand(query, dbConnection);
-                OracleDataReader reader;
+                SqlCommand command = new SqlCommand(query, dbConnection);
+                SqlDataReader reader;
                 DataTable data = new DataTable();
                 array = query.Split();
                 operation = array[0];
@@ -49,7 +52,7 @@ namespace ORACLE_SQL_SERVER_Client.Views
                         command.CommandType = CommandType.Text;
                         reader = command.ExecuteReader();
                         data.Load(reader);
-                        this.OracleResults.DataSource = data;
+                        this.SQLServerResults.DataSource = data;
 
                     }
 
@@ -57,7 +60,7 @@ namespace ORACLE_SQL_SERVER_Client.Views
                     {
                         MessageBox.Show(error.Message.ToString());
                     }
-                else if(operation == "DROP") 
+                else if (operation == "DROP")
                 {
                     MessageBox.Show("This action is not allowed.");
                 }
@@ -78,40 +81,37 @@ namespace ORACLE_SQL_SERVER_Client.Views
                 }
 
             }
-
         }
-
         private void ExecutionPlanButton_Click(object sender, EventArgs e)
         {
-            if (this.OracleConsole.Text.Split()[0] == "SELECT")
+            if (this.SQLServerConsole.Text.Split()[0] == "SELECT")
             {
-                String query = "EXPLAIN PLAN SET statement_id = 'ex_plan' FOR " + this.OracleConsole.Text;
-                OracleConnection dbConnection = this.dbConnection.getDatabaseConnection();
-                OracleCommand command = new OracleCommand(query, dbConnection);
-                OracleDataReader reader;
+                String query = "EXPLAIN PLAN SET statement_id = 'ex_plan' FOR " + this.SQLServerResults.Text;
+                SqlConnection dbConnection = this.dbConnection.getDatabaseConnection();
+                SqlCommand command = new SqlCommand(query, dbConnection);
+                query = "SET SHOWPLAN_ALL ON";
+                SqlDataReader reader;
                 DataTable data = new DataTable();
                 try
                 {
                     command.CommandText = query;
                     command.CommandType = CommandType.Text;
-                    reader = command.ExecuteReader();
-                    query = "SELECT * FROM TABLE(DBMS_XPLAN.display)";
+                    command.ExecuteNonQuery();
+                    query = this.SQLServerConsole.Text;
                     command.CommandText = query;
                     reader = command.ExecuteReader();
                     data.Load(reader);
-                    this.OracleResults.DataSource = data;
-
+                    this.SQLServerResults.DataSource = data;
                 }
                 catch (Exception error)
                 {
-                    MessageBox.Show(error.ToString());
+                    MessageBox.Show(error.Message.ToString());
                 }
+                query = "SET SHOWPLAN_ALL OFF";
+                command.CommandText = query;
+                command.CommandType = CommandType.Text;
+                command.ExecuteNonQuery();
             }
-        }
-
-        private void OracleView_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            Application.Exit();
         }
     }
 }
