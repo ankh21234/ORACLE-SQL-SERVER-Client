@@ -411,25 +411,41 @@
   <data name="&gt;&gt;groupBox2.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="treeView1.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="OracleObjects.Location" type="System.Drawing.Point, System.Drawing">
     <value>6, 16</value>
   </data>
-  <data name="treeView1.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="OracleObjects.Nodes" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>
+        AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
+        LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAAB1TeXN0
+        ZW0uV2luZG93cy5Gb3Jtcy5UcmVlTm9kZQoAAAAHUHJvcEJhZwRUZXh0C1Rvb2xUaXBUZXh0BE5hbWUJ
+        SXNDaGVja2VkCkltYWdlSW5kZXgISW1hZ2VLZXkSU2VsZWN0ZWRJbWFnZUluZGV4EFNlbGVjdGVkSW1h
+        Z2VLZXkKQ2hpbGRDb3VudAQBAQEAAAEAAQApU3lzdGVtLldpbmRvd3MuRm9ybXMuT3duZXJEcmF3UHJv
+        cGVydHlCYWcCAAAAAQgICAIAAAAJAwAAAAYEAAAACERhdGFiYXNlBgUAAAAABgYAAAAIRGF0YWJhc2UB
+        /////wkFAAAA/////wkFAAAAAAAAAAwIAAAAUVN5c3RlbS5EcmF3aW5nLCBWZXJzaW9uPTQuMC4wLjAs
+        IEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49YjAzZjVmN2YxMWQ1MGEzYQUDAAAAKVN5c3Rl
+        bS5XaW5kb3dzLkZvcm1zLk93bmVyRHJhd1Byb3BlcnR5QmFnAwAAAAlCYWNrQ29sb3IJRm9yZUNvbG9y
+        BEZvbnQEBAIUU3lzdGVtLkRyYXdpbmcuQ29sb3IIAAAAFFN5c3RlbS5EcmF3aW5nLkNvbG9yCAAAAAIA
+        AAAF9////xRTeXN0ZW0uRHJhd2luZy5Db2xvcgQAAAAEbmFtZQV2YWx1ZQprbm93bkNvbG9yBXN0YXRl
+        AQAAAAkHBwgAAAAKAAAAAAAAAAAbAAEAAfb////3////CgAAAAAAAAAAFAABAAoL
+</value>
+  </data>
+  <data name="OracleObjects.Size" type="System.Drawing.Size, System.Drawing">
     <value>214, 664</value>
   </data>
-  <data name="treeView1.TabIndex" type="System.Int32, mscorlib">
+  <data name="OracleObjects.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
   </data>
-  <data name="&gt;&gt;treeView1.Name" xml:space="preserve">
-    <value>treeView1</value>
+  <data name="&gt;&gt;OracleObjects.Name" xml:space="preserve">
+    <value>OracleObjects</value>
   </data>
-  <data name="&gt;&gt;treeView1.Type" xml:space="preserve">
+  <data name="&gt;&gt;OracleObjects.Type" xml:space="preserve">
     <value>System.Windows.Forms.TreeView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;treeView1.Parent" xml:space="preserve">
+  <data name="&gt;&gt;OracleObjects.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;treeView1.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;OracleObjects.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">

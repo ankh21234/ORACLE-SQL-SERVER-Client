@@ -22,7 +22,60 @@ namespace ORACLE_SQL_SERVER_Client.Views
             this.DatabaseName.Text += " " + connection.getDatabaseConnection().DataSource;
             this.HostName.Text += " " +connection.getDatabaseConnection().HostName;
             this.Username.Text += " " + connection.getUsername();
+            this.dbConnection.createConnection();
+            this.OracleObjects.Nodes[0].Text = connection.getDatabaseConnection().DataSource;
+            OracleConnection dbConnection = this.dbConnection.getDatabaseConnection();
 
+            String query = "SELECT OBJECT_NAME, OBJECT_TYPE FROM USER_OBJECTS";
+            OracleCommand command = new OracleCommand(query, dbConnection);
+            OracleDataReader reader;
+            Dictionary<String, List<String>> dbObjects = new Dictionary<String, List<String>>();
+            String key;
+            String value;
+
+            command.CommandText = query;
+            command.CommandType = CommandType.Text;
+            reader = command.ExecuteReader();
+            List<String> iterator;
+            TreeNode objectNode;
+            TreeNode subObjectNode;
+
+            while (reader.Read())
+            {
+                key = reader["OBJECT_TYPE"].ToString();
+                value = reader["OBJECT_NAME"].ToString();
+                if (!dbObjects.ContainsKey(key))
+                {
+                    iterator = new List<String>();
+                    iterator.Add(value);
+                    dbObjects.Add(key, iterator);
+                }
+                else
+                {
+                    iterator = new List<String>(dbObjects[key]);
+                    iterator.Add(value);
+                    dbObjects[key] = iterator;
+                }
+            }
+
+            foreach (String i in dbObjects.Keys)
+            {
+                objectNode = new TreeNode();
+                objectNode.Text = i;
+                objectNode.Name = i;
+                objectNode.ForeColor = System.Drawing.Color.Black;
+                List<String> childObjs = new List<String>(dbObjects[i]);
+                foreach (String j in childObjs)
+                {
+                    subObjectNode = new TreeNode();
+                    subObjectNode.Name = j;
+                    subObjectNode.Text = j;
+                    subObjectNode.ForeColor = System.Drawing.Color.Black;
+                    objectNode.Nodes.Add(subObjectNode);
+                    
+                }
+                this.OracleObjects.Nodes[0].Nodes.Add(objectNode);
+            }
 
         }
 
@@ -34,7 +87,6 @@ namespace ORACLE_SQL_SERVER_Client.Views
                 String query = this.OracleConsole.Text;
                 String operation;
                 String invalidOperation;
-                this.dbConnection.createConnection();
                 OracleConnection dbConnection = this.dbConnection.getDatabaseConnection();
                 query.ToUpper();
                 OracleCommand command = new OracleCommand(query, dbConnection);

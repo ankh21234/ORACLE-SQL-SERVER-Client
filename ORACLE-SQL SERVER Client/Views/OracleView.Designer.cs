@@ -40,7 +40,7 @@
             this.Username = new System.Windows.Forms.Label();
             this.DatabaseName = new System.Windows.Forms.Label();
             this.HostName = new System.Windows.Forms.Label();
-            this.treeView1 = new System.Windows.Forms.TreeView();
+            this.OracleObjects = new System.Windows.Forms.TreeView();
             ((System.ComponentModel.ISupportInitialize)(this.OracleResults)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -118,16 +118,19 @@
             resources.ApplyResources(this.HostName, "HostName");
             this.HostName.Name = "HostName";
             // 
-            // treeView1
+            // OracleObjects
             // 
-            resources.ApplyResources(this.treeView1, "treeView1");
-            this.treeView1.Name = "treeView1";
+            this.OracleObjects.ForeColor = System.Drawing.SystemColors.Window;
+            resources.ApplyResources(this.OracleObjects, "OracleObjects");
+            this.OracleObjects.Name = "OracleObjects";
+            this.OracleObjects.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
+            ((System.Windows.Forms.TreeNode)(resources.GetObject("OracleObjects.Nodes")))});
             // 
             // OracleView
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.treeView1);
+            this.Controls.Add(this.OracleObjects);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.OracleResults);
@@ -155,6 +158,6 @@
         private System.Windows.Forms.Label Username;
         private System.Windows.Forms.Label DatabaseName;
         private System.Windows.Forms.Label HostName;
-        private System.Windows.Forms.TreeView treeView1;
+        private System.Windows.Forms.TreeView OracleObjects;
     }
 }
