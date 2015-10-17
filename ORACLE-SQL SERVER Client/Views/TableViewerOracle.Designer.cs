@@ -33,6 +33,8 @@
             this.tableDetails = new System.Windows.Forms.DataGridView();
             this.TableAddColumn = new System.Windows.Forms.TabPage();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.precisionLabel = new System.Windows.Forms.Label();
+            this.precisionText = new System.Windows.Forms.TextBox();
             this.dataType = new System.Windows.Forms.ComboBox();
             this.okText = new System.Windows.Forms.Label();
             this.submitButton = new System.Windows.Forms.Button();
@@ -40,8 +42,6 @@
             this.columnNameText = new System.Windows.Forms.TextBox();
             this.columnDataType = new System.Windows.Forms.Label();
             this.columnNameLabel = new System.Windows.Forms.Label();
-            this.precision = new System.Windows.Forms.TextBox();
-            this.precisionLabel = new System.Windows.Forms.Label();
             this.TableOptions.SuspendLayout();
             this.ViewTableViewAttributes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tableDetails)).BeginInit();
@@ -94,7 +94,7 @@
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ControlLight;
             this.panel1.Controls.Add(this.precisionLabel);
-            this.panel1.Controls.Add(this.precision);
+            this.panel1.Controls.Add(this.precisionText);
             this.panel1.Controls.Add(this.dataType);
             this.panel1.Controls.Add(this.okText);
             this.panel1.Controls.Add(this.submitButton);
@@ -106,6 +106,22 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(348, 197);
             this.panel1.TabIndex = 3;
+            // 
+            // precisionLabel
+            // 
+            this.precisionLabel.AutoSize = true;
+            this.precisionLabel.Location = new System.Drawing.Point(33, 96);
+            this.precisionLabel.Name = "precisionLabel";
+            this.precisionLabel.Size = new System.Drawing.Size(50, 13);
+            this.precisionLabel.TabIndex = 14;
+            this.precisionLabel.Text = "Precision";
+            // 
+            // precisionText
+            // 
+            this.precisionText.Location = new System.Drawing.Point(122, 93);
+            this.precisionText.Name = "precisionText";
+            this.precisionText.Size = new System.Drawing.Size(191, 20);
+            this.precisionText.TabIndex = 13;
             // 
             // dataType
             // 
@@ -180,22 +196,6 @@
             this.columnNameLabel.TabIndex = 0;
             this.columnNameLabel.Text = "Column Name";
             // 
-            // precision
-            // 
-            this.precision.Location = new System.Drawing.Point(122, 93);
-            this.precision.Name = "precision";
-            this.precision.Size = new System.Drawing.Size(191, 20);
-            this.precision.TabIndex = 13;
-            // 
-            // precisionLabel
-            // 
-            this.precisionLabel.AutoSize = true;
-            this.precisionLabel.Location = new System.Drawing.Point(33, 96);
-            this.precisionLabel.Name = "precisionLabel";
-            this.precisionLabel.Size = new System.Drawing.Size(50, 13);
-            this.precisionLabel.TabIndex = 14;
-            this.precisionLabel.Text = "Precision";
-            // 
             // TableViewerOracle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -230,7 +230,7 @@
         private ORACLE_SQL_SERVER_Client.Controllers.OracleDBConnection dbConnection;
         private string tableName;
         private System.Windows.Forms.ComboBox dataType;
-        private System.Windows.Forms.TextBox precision;
+        private System.Windows.Forms.TextBox precisionText;
         public System.Windows.Forms.Label precisionLabel;
     }
 }

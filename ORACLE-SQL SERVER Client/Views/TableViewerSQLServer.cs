@@ -25,7 +25,7 @@ namespace ORACLE_SQL_SERVER_Client.Views
             {
                 this.TableOptions.SelectedIndex = 1;
             }
-
+            refreshInitialize();
         }
 
         private void submitButton_Click(object sender, EventArgs e)
@@ -51,6 +51,9 @@ namespace ORACLE_SQL_SERVER_Client.Views
                 command.ExecuteNonQuery();
                 this.okText.Text = "Column added succesfully.";
                 refreshInitialize();
+                this.precisionText.Text = "";
+                this.columnNameText.Text = "";
+                this.dataType.ResetText();
             }
             catch (Exception error)
             {

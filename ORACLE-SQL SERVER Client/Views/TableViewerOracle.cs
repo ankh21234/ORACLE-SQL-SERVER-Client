@@ -40,7 +40,7 @@ namespace ORACLE_SQL_SERVER_Client.Views
             else
             {
                     query = "ALTER TABLE " + this.tableName + " " +
-                    "ADD " + this.columnNameText.Text + " " + this.dataType.Text + "(" + this.precision.Text + ")";
+                    "ADD " + this.columnNameText.Text + " " + this.dataType.Text + "(" + this.precisionText.Text + ")";
             }
 
 
@@ -60,10 +60,13 @@ namespace ORACLE_SQL_SERVER_Client.Views
                 command.ExecuteNonQuery();
                 this.okText.Text = "Column added succesfully.";
                 refreshInitializeTable();
+                this.precisionText.Text = "";
+                this.columnNameText.Text = "";
+                this.dataType.ResetText();
             }
             catch (Exception error)
             {
-                if (this.columnNameText.Text == "" || this.precision.Text == "")
+                if (this.columnNameText.Text == "" || this.precisionText.Text == "")
                 {
                     MessageBox.Show("Column name or data type fields are empty.");
                 }
@@ -78,11 +81,11 @@ namespace ORACLE_SQL_SERVER_Client.Views
         {
             if (dataType.Text == "BLOB" || dataType.Text == "CLOB" || dataType.Text == "DATE")
             {
-                this.precision.Enabled = false;
+                this.precisionText.Enabled = false;
             }
             else
             {
-                this.precision.Enabled = true;
+                this.precisionText.Enabled = true;
             }
         }
 

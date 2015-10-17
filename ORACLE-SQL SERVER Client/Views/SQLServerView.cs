@@ -38,6 +38,7 @@ namespace ORACLE_SQL_SERVER_Client.Views
                 String operation;
                 this.dbConnection.createConnection();
                 SqlConnection dbConnection = this.dbConnection.getDatabaseConnection();
+                query = query.Remove(query.Length - 1);
                 query.ToUpper();
                 SqlCommand command = new SqlCommand(query, dbConnection);
                 SqlDataReader reader;
@@ -137,6 +138,8 @@ namespace ORACLE_SQL_SERVER_Client.Views
 
         private void refreshInitialize()
         {
+            this.SQLServerObjects.Nodes[0].Nodes.Clear();
+            this.SQLServerObjects.Nodes[0].Text = this.dbConnection.getDatabaseConnection().Database;
             SqlConnection dbConnection = this.dbConnection.getDatabaseConnection();
 
             String query = "SELECT NAME,TYPE_DESC FROM SYS.OBJECTS " +
@@ -213,12 +216,16 @@ namespace ORACLE_SQL_SERVER_Client.Views
             command.CommandType = CommandType.Text;
             reader = command.ExecuteReader();
 
+            TreeNode indexes = new TreeNode();
+            indexes.Text = "INDEX";
+            indexes.ForeColor = System.Drawing.Color.Black;
             while (reader.Read())
             {
                 TreeNode indexNode = new TreeNode();
                 indexNode.ForeColor = System.Drawing.Color.Black;
-                this.SQLServerObjects.Nodes[0].Nodes[0].Nodes.Add(reader["INDEXNAME"].ToString());
+                indexes.Nodes.Add(reader["INDEXNAME"].ToString());
             }
+            this.SQLServerObjects.Nodes[0].Nodes.Add(indexes);
             reader.Close();
         }
 

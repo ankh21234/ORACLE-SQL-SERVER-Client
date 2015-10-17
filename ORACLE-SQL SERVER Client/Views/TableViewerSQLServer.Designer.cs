@@ -33,15 +33,15 @@
             this.tableDetails = new System.Windows.Forms.DataGridView();
             this.TableAddColumn = new System.Windows.Forms.TabPage();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.dataType = new System.Windows.Forms.ComboBox();
             this.okText = new System.Windows.Forms.Label();
             this.submitButton = new System.Windows.Forms.Button();
             this.precision = new System.Windows.Forms.Label();
-            this.defaultValueText = new System.Windows.Forms.TextBox();
+            this.precisionText = new System.Windows.Forms.TextBox();
             this.notNullCheckbox = new System.Windows.Forms.CheckBox();
             this.columnNameText = new System.Windows.Forms.TextBox();
             this.columnDataType = new System.Windows.Forms.Label();
             this.columnNameLabel = new System.Windows.Forms.Label();
-            this.dataType = new System.Windows.Forms.ComboBox();
             this.TableOptions.SuspendLayout();
             this.ViewTableViewAttributes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tableDetails)).BeginInit();
@@ -97,7 +97,7 @@
             this.panel1.Controls.Add(this.okText);
             this.panel1.Controls.Add(this.submitButton);
             this.panel1.Controls.Add(this.precision);
-            this.panel1.Controls.Add(this.defaultValueText);
+            this.panel1.Controls.Add(this.precisionText);
             this.panel1.Controls.Add(this.notNullCheckbox);
             this.panel1.Controls.Add(this.columnNameText);
             this.panel1.Controls.Add(this.columnDataType);
@@ -106,6 +106,37 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(348, 197);
             this.panel1.TabIndex = 3;
+            // 
+            // dataType
+            // 
+            this.dataType.FormattingEnabled = true;
+            this.dataType.Items.AddRange(new object[] {
+            "BIGINT",
+            "NUMERIC",
+            "BIT",
+            "SMALLINT",
+            "DECIMAL",
+            "INT",
+            "TINYINT",
+            "MONEY",
+            "SMALLMONEY",
+            "FLOAT",
+            "REAL",
+            "DATE",
+            "DATETIME",
+            "DATETIMEOFFSET",
+            "DATETIME2",
+            "TIME",
+            "TIMESTAMP",
+            "CHAR",
+            "VARCHAR",
+            "TEXT",
+            "BINARY",
+            "VARBINARY"});
+            this.dataType.Location = new System.Drawing.Point(122, 59);
+            this.dataType.Name = "dataType";
+            this.dataType.Size = new System.Drawing.Size(191, 21);
+            this.dataType.TabIndex = 12;
             // 
             // okText
             // 
@@ -136,12 +167,12 @@
             this.precision.Text = "Precision";
             this.precision.UseWaitCursor = true;
             // 
-            // defaultValueText
+            // precisionText
             // 
-            this.defaultValueText.Location = new System.Drawing.Point(122, 91);
-            this.defaultValueText.Name = "defaultValueText";
-            this.defaultValueText.Size = new System.Drawing.Size(191, 20);
-            this.defaultValueText.TabIndex = 8;
+            this.precisionText.Location = new System.Drawing.Point(122, 91);
+            this.precisionText.Name = "precisionText";
+            this.precisionText.Size = new System.Drawing.Size(191, 20);
+            this.precisionText.TabIndex = 8;
             // 
             // notNullCheckbox
             // 
@@ -178,37 +209,6 @@
             this.columnNameLabel.TabIndex = 0;
             this.columnNameLabel.Text = "Column Name";
             // 
-            // dataType
-            // 
-            this.dataType.FormattingEnabled = true;
-            this.dataType.Items.AddRange(new object[] {
-            "BIGINT",
-            "NUMERIC",
-            "BIT",
-            "SMALLINT",
-            "DECIMAL",
-            "INT",
-            "TINYINT",
-            "MONEY",
-            "SMALLMONEY",
-            "FLOAT",
-            "REAL",
-            "DATE",
-            "DATETIME",
-            "DATETIMEOFFSET",
-            "DATETIME2",
-            "TIME",
-            "TIMESTAMP",
-            "CHAR",
-            "VARCHAR",
-            "TEXT",
-            "BINARY",
-            "VARBINARY"});
-            this.dataType.Location = new System.Drawing.Point(122, 59);
-            this.dataType.Name = "dataType";
-            this.dataType.Size = new System.Drawing.Size(191, 21);
-            this.dataType.TabIndex = 12;
-            // 
             // TableViewerSQLServer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -240,7 +240,7 @@
         private System.Windows.Forms.Label okText;
         private System.Windows.Forms.Button submitButton;
         private System.Windows.Forms.Label precision;
-        private System.Windows.Forms.TextBox defaultValueText;
+        private System.Windows.Forms.TextBox precisionText;
         private System.Windows.Forms.CheckBox notNullCheckbox;
         private System.Windows.Forms.TextBox columnNameText;
         private System.Windows.Forms.Label columnDataType;
