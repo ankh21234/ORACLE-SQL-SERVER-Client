@@ -21,89 +21,7 @@ namespace ORACLE_SQL_SERVER_Client.Views
             this.HostName.Text += connection.getServerName();
             this.DatabaseName.Text += connection.getDatabaseConnection().Database;
             this.Username.Text += connection.getUsername();
-            SqlConnection dbConnection = this.dbConnection.getDatabaseConnection();
-
-            String query = "SELECT NAME,TYPE_DESC FROM SYS.OBJECTS " +
-                           " WHERE TYPE != 'IT' " +
-                           " AND TYPE != 'S'  " +
-                           " AND TYPE != 'SQ' " +
-                           " AND TYPE != 'L'  " +
-                           " AND TYPE != 'PC' " +
-                           " AND TYPE != 'TA' " +
-                           " AND TYPE != 'X'  " +
-                           " AND TYPE != 'RF' " +
-                           " AND TYPE != 'IF' " +
-                           " AND TYPE != 'TT'";
-            SqlCommand command = new SqlCommand(query, dbConnection);
-            SqlDataReader reader;
-            Dictionary<String, List<String>> dbObjects = new Dictionary<String, List<String>>();
-            String key;
-            String value;
-
-            command.CommandText = query;
-            command.CommandType = CommandType.Text;
-            reader = command.ExecuteReader();
-            List<String> iterator;
-            TreeNode objectNode;
-            TreeNode subObjectNode;
-
-            while (reader.Read())
-            {
-                key = reader["TYPE_DESC"].ToString();
-                value = reader["NAME"].ToString();
-                if (!dbObjects.ContainsKey(key))
-                {
-                    iterator = new List<String>();
-                    iterator.Add(value);
-                    dbObjects.Add(key, iterator);
-                }
-                else
-                {
-                    iterator = new List<String>(dbObjects[key]);
-                    iterator.Add(value);
-                    dbObjects[key] = iterator;
-                }
-            }
-            reader.Close();
-
-            foreach (String i in dbObjects.Keys)
-            {
-                objectNode = new TreeNode();
-                objectNode.Text = i;
-                objectNode.Name = i;
-                objectNode.ForeColor = System.Drawing.Color.Black;
-                List<String> childObjs = new List<String>(dbObjects[i]);
-                foreach (String j in childObjs)
-                {
-                    subObjectNode = new TreeNode();
-                    subObjectNode.Name = j;
-                    subObjectNode.Text = j;
-                    subObjectNode.ForeColor = System.Drawing.Color.Black;
-                    if (i == "USER_TABLE" || i == "VIEW")
-                    {
-                        subObjectNode.ContextMenuStrip = this.TableViewContextMenu;
-                    }
-                    objectNode.Nodes.Add(subObjectNode);
-
-                }
-                this.SQLServerObjects.Nodes[0].Nodes.Add(objectNode);
-            }
-
-            query = "SELECT sys.objects.name, sys.indexes.name AS IndexName, sys.indexes.type_desc FROM sys.indexes, sys.objects "
-                    + "WHERE sys.indexes.object_id = sys.objects.object_id "
-                    + "AND sys.objects.type = 'U'"
-                    + "AND sys.indexes.name != ''";
-            command.CommandText = query;
-            command.CommandType = CommandType.Text;
-            reader = command.ExecuteReader();
-
-            while (reader.Read())
-            {
-                TreeNode indexNode = new TreeNode();
-                indexNode.ForeColor = System.Drawing.Color.Black;
-                this.SQLServerObjects.Nodes[0].Nodes[0].Nodes.Add(reader["INDEXNAME"].ToString());
-            }
-            reader.Close();
+            refreshInitialize();
         }
 
         private void SQLServerView_FormClosing(object sender, FormClosingEventArgs e)
@@ -215,6 +133,105 @@ namespace ORACLE_SQL_SERVER_Client.Views
             String tableName = this.SQLServerObjects.SelectedNode.Text;
             TableViewerSQLServer tableViewer = new TableViewerSQLServer(tableName, dbConnection, true);
             tableViewer.ShowDialog();
+        }
+
+        private void refreshInitialize()
+        {
+            SqlConnection dbConnection = this.dbConnection.getDatabaseConnection();
+
+            String query = "SELECT NAME,TYPE_DESC FROM SYS.OBJECTS " +
+                           " WHERE TYPE != 'IT' " +
+                           " AND TYPE != 'S'  " +
+                           " AND TYPE != 'SQ' " +
+                           " AND TYPE != 'L'  " +
+                           " AND TYPE != 'PC' " +
+                           " AND TYPE != 'TA' " +
+                           " AND TYPE != 'X'  " +
+                           " AND TYPE != 'RF' " +
+                           " AND TYPE != 'IF' " +
+                           " AND TYPE != 'TT'";
+            SqlCommand command = new SqlCommand(query, dbConnection);
+            SqlDataReader reader;
+            Dictionary<String, List<String>> dbObjects = new Dictionary<String, List<String>>();
+            String key;
+            String value;
+
+            command.CommandText = query;
+            command.CommandType = CommandType.Text;
+            reader = command.ExecuteReader();
+            List<String> iterator;
+            TreeNode objectNode;
+            TreeNode subObjectNode;
+
+            while (reader.Read())
+            {
+                key = reader["TYPE_DESC"].ToString();
+                value = reader["NAME"].ToString();
+                if (!dbObjects.ContainsKey(key))
+                {
+                    iterator = new List<String>();
+                    iterator.Add(value);
+                    dbObjects.Add(key, iterator);
+                }
+                else
+                {
+                    iterator = new List<String>(dbObjects[key]);
+                    iterator.Add(value);
+                    dbObjects[key] = iterator;
+                }
+            }
+            reader.Close();
+
+            foreach (String i in dbObjects.Keys)
+            {
+                objectNode = new TreeNode();
+                objectNode.Text = i;
+                objectNode.Name = i;
+                objectNode.ForeColor = System.Drawing.Color.Black;
+                List<String> childObjs = new List<String>(dbObjects[i]);
+                foreach (String j in childObjs)
+                {
+                    subObjectNode = new TreeNode();
+                    subObjectNode.Name = j;
+                    subObjectNode.Text = j;
+                    subObjectNode.ForeColor = System.Drawing.Color.Black;
+                    if (i == "USER_TABLE" || i == "VIEW")
+                    {
+                        subObjectNode.ContextMenuStrip = this.TableViewContextMenu;
+                    }
+                    objectNode.Nodes.Add(subObjectNode);
+
+                }
+                this.SQLServerObjects.Nodes[0].Nodes.Add(objectNode);
+            }
+
+            query = "SELECT sys.objects.name, sys.indexes.name AS IndexName, sys.indexes.type_desc FROM sys.indexes, sys.objects "
+                    + "WHERE sys.indexes.object_id = sys.objects.object_id "
+                    + "AND sys.objects.type = 'U'"
+                    + "AND sys.indexes.name != ''";
+            command.CommandText = query;
+            command.CommandType = CommandType.Text;
+            reader = command.ExecuteReader();
+
+            while (reader.Read())
+            {
+                TreeNode indexNode = new TreeNode();
+                indexNode.ForeColor = System.Drawing.Color.Black;
+                this.SQLServerObjects.Nodes[0].Nodes[0].Nodes.Add(reader["INDEXNAME"].ToString());
+            }
+            reader.Close();
+        }
+
+        private void refreshButton_Click(object sender, EventArgs e)
+        {
+            refreshInitialize();
+        }
+
+        private void disconnectButton_Click(object sender, EventArgs e)
+        {
+            dbConnection.getDatabaseConnection().Close();
+            new MainWindow().Show();
+            this.Dispose();
         }
     }
 }

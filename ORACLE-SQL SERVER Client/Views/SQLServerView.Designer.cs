@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("INDEX");
-            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Database", new System.Windows.Forms.TreeNode[] {
-            treeNode1});
+            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("INDEX");
+            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("Database", new System.Windows.Forms.TreeNode[] {
+            treeNode5});
             this.SQLServerConsole = new System.Windows.Forms.RichTextBox();
             this.SQLServerResults = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.disconnectButton = new System.Windows.Forms.Button();
+            this.refreshButton = new System.Windows.Forms.Button();
             this.ExecutionPlanButton = new System.Windows.Forms.Button();
             this.ExecuteQueryButton = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -77,8 +77,8 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.button4);
-            this.groupBox1.Controls.Add(this.button3);
+            this.groupBox1.Controls.Add(this.disconnectButton);
+            this.groupBox1.Controls.Add(this.refreshButton);
             this.groupBox1.Controls.Add(this.ExecutionPlanButton);
             this.groupBox1.Controls.Add(this.ExecuteQueryButton);
             this.groupBox1.Location = new System.Drawing.Point(889, 12);
@@ -88,25 +88,27 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Controls";
             // 
-            // button4
+            // disconnectButton
             // 
-            this.button4.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.button4.Location = new System.Drawing.Point(134, 49);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(88, 23);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "button4";
-            this.button4.UseVisualStyleBackColor = true;
+            this.disconnectButton.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.disconnectButton.Location = new System.Drawing.Point(134, 49);
+            this.disconnectButton.Name = "disconnectButton";
+            this.disconnectButton.Size = new System.Drawing.Size(88, 23);
+            this.disconnectButton.TabIndex = 3;
+            this.disconnectButton.Text = "Disconnect";
+            this.disconnectButton.UseVisualStyleBackColor = true;
+            this.disconnectButton.Click += new System.EventHandler(this.disconnectButton_Click);
             // 
-            // button3
+            // refreshButton
             // 
-            this.button3.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.button3.Location = new System.Drawing.Point(36, 49);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(92, 23);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "button3";
-            this.button3.UseVisualStyleBackColor = true;
+            this.refreshButton.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.refreshButton.Location = new System.Drawing.Point(36, 49);
+            this.refreshButton.Name = "refreshButton";
+            this.refreshButton.Size = new System.Drawing.Size(92, 23);
+            this.refreshButton.TabIndex = 2;
+            this.refreshButton.Text = "Refresh Connection";
+            this.refreshButton.UseVisualStyleBackColor = true;
+            this.refreshButton.Click += new System.EventHandler(this.refreshButton_Click);
             // 
             // ExecutionPlanButton
             // 
@@ -180,14 +182,14 @@
             // 
             this.SQLServerObjects.Location = new System.Drawing.Point(13, 13);
             this.SQLServerObjects.Name = "SQLServerObjects";
-            treeNode1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            treeNode1.Name = "Node0";
-            treeNode1.Text = "INDEX";
-            treeNode2.ForeColor = System.Drawing.Color.Black;
-            treeNode2.Name = "Database";
-            treeNode2.Text = "Database";
+            treeNode5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            treeNode5.Name = "Node0";
+            treeNode5.Text = "INDEX";
+            treeNode6.ForeColor = System.Drawing.Color.Black;
+            treeNode6.Name = "Database";
+            treeNode6.Text = "Database";
             this.SQLServerObjects.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode2});
+            treeNode6});
             this.SQLServerObjects.Size = new System.Drawing.Size(193, 667);
             this.SQLServerObjects.TabIndex = 6;
             this.SQLServerObjects.MouseUp += new System.Windows.Forms.MouseEventHandler(this.SQLServerObjects_MouseUp);
@@ -198,13 +200,13 @@
             this.ViewTableView,
             this.AddColumn});
             this.TableViewContextMenu.Name = "TableViewContextMenu";
-            this.TableViewContextMenu.Size = new System.Drawing.Size(153, 70);
+            this.TableViewContextMenu.Size = new System.Drawing.Size(141, 48);
             // 
             // ViewTableView
             // 
             this.ViewTableView.AutoToolTip = true;
             this.ViewTableView.Name = "ViewTableView";
-            this.ViewTableView.Size = new System.Drawing.Size(152, 22);
+            this.ViewTableView.Size = new System.Drawing.Size(140, 22);
             this.ViewTableView.Text = "View";
             this.ViewTableView.ToolTipText = "View table properties";
             this.ViewTableView.Click += new System.EventHandler(this.ViewTableView_Click);
@@ -212,7 +214,7 @@
             // AddColumn
             // 
             this.AddColumn.Name = "AddColumn";
-            this.AddColumn.Size = new System.Drawing.Size(152, 22);
+            this.AddColumn.Size = new System.Drawing.Size(140, 22);
             this.AddColumn.Text = "Add column";
             this.AddColumn.ToolTipText = "Add column to table";
             this.AddColumn.Click += new System.EventHandler(this.AddColumn_Click);
@@ -269,8 +271,8 @@
         private System.Windows.Forms.RichTextBox SQLServerConsole;
         private System.Windows.Forms.DataGridView SQLServerResults;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button disconnectButton;
+        private System.Windows.Forms.Button refreshButton;
         private System.Windows.Forms.Button ExecutionPlanButton;
         private System.Windows.Forms.Button ExecuteQueryButton;
         private System.Windows.Forms.GroupBox groupBox2;
