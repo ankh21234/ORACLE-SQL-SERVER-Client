@@ -28,6 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("INDEX");
+            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Database", new System.Windows.Forms.TreeNode[] {
+            treeNode1});
             this.SQLServerConsole = new System.Windows.Forms.RichTextBox();
             this.SQLServerResults = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -39,10 +43,18 @@
             this.Username = new System.Windows.Forms.Label();
             this.DatabaseName = new System.Windows.Forms.Label();
             this.HostName = new System.Windows.Forms.Label();
-            this.treeView1 = new System.Windows.Forms.TreeView();
+            this.SQLServerObjects = new System.Windows.Forms.TreeView();
+            this.TableViewContextMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.ViewTableView = new System.Windows.Forms.ToolStripMenuItem();
+            this.AddColumn = new System.Windows.Forms.ToolStripMenuItem();
+            this.ProceduresFunctionsContextMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.ViewProceduresFunctions = new System.Windows.Forms.ToolStripMenuItem();
+            this.ProcedureFunctionEdit = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.SQLServerResults)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.TableViewContextMenu.SuspendLayout();
+            this.ProceduresFunctionsContextMenu.SuspendLayout();
             this.SuspendLayout();
             // 
             // SQLServerConsole
@@ -164,19 +176,77 @@
             this.HostName.TabIndex = 0;
             this.HostName.Text = "Host: ";
             // 
-            // treeView1
+            // SQLServerObjects
             // 
-            this.treeView1.Location = new System.Drawing.Point(13, 13);
-            this.treeView1.Name = "treeView1";
-            this.treeView1.Size = new System.Drawing.Size(193, 667);
-            this.treeView1.TabIndex = 6;
+            this.SQLServerObjects.Location = new System.Drawing.Point(13, 13);
+            this.SQLServerObjects.Name = "SQLServerObjects";
+            treeNode1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            treeNode1.Name = "Node0";
+            treeNode1.Text = "INDEX";
+            treeNode2.ForeColor = System.Drawing.Color.Black;
+            treeNode2.Name = "Database";
+            treeNode2.Text = "Database";
+            this.SQLServerObjects.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
+            treeNode2});
+            this.SQLServerObjects.Size = new System.Drawing.Size(193, 667);
+            this.SQLServerObjects.TabIndex = 6;
+            this.SQLServerObjects.MouseUp += new System.Windows.Forms.MouseEventHandler(this.SQLServerObjects_MouseUp);
+            // 
+            // TableViewContextMenu
+            // 
+            this.TableViewContextMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ViewTableView,
+            this.AddColumn});
+            this.TableViewContextMenu.Name = "TableViewContextMenu";
+            this.TableViewContextMenu.Size = new System.Drawing.Size(153, 70);
+            // 
+            // ViewTableView
+            // 
+            this.ViewTableView.AutoToolTip = true;
+            this.ViewTableView.Name = "ViewTableView";
+            this.ViewTableView.Size = new System.Drawing.Size(152, 22);
+            this.ViewTableView.Text = "View";
+            this.ViewTableView.ToolTipText = "View table properties";
+            this.ViewTableView.Click += new System.EventHandler(this.ViewTableView_Click);
+            // 
+            // AddColumn
+            // 
+            this.AddColumn.Name = "AddColumn";
+            this.AddColumn.Size = new System.Drawing.Size(152, 22);
+            this.AddColumn.Text = "Add column";
+            this.AddColumn.ToolTipText = "Add column to table";
+            this.AddColumn.Click += new System.EventHandler(this.AddColumn_Click);
+            // 
+            // ProceduresFunctionsContextMenu
+            // 
+            this.ProceduresFunctionsContextMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ViewProceduresFunctions,
+            this.ProcedureFunctionEdit});
+            this.ProceduresFunctionsContextMenu.Name = "ProceduresFunctionsContextMenu";
+            this.ProceduresFunctionsContextMenu.Size = new System.Drawing.Size(100, 48);
+            // 
+            // ViewProceduresFunctions
+            // 
+            this.ViewProceduresFunctions.AutoToolTip = true;
+            this.ViewProceduresFunctions.Name = "ViewProceduresFunctions";
+            this.ViewProceduresFunctions.Size = new System.Drawing.Size(99, 22);
+            this.ViewProceduresFunctions.Text = "View";
+            this.ViewProceduresFunctions.ToolTipText = "View code contents";
+            // 
+            // ProcedureFunctionEdit
+            // 
+            this.ProcedureFunctionEdit.AutoToolTip = true;
+            this.ProcedureFunctionEdit.Name = "ProcedureFunctionEdit";
+            this.ProcedureFunctionEdit.Size = new System.Drawing.Size(99, 22);
+            this.ProcedureFunctionEdit.Text = "Edit";
+            this.ProcedureFunctionEdit.ToolTipText = "Edit code";
             // 
             // SQLServerView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1184, 692);
-            this.Controls.Add(this.treeView1);
+            this.Controls.Add(this.SQLServerObjects);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.SQLServerResults);
@@ -188,6 +258,8 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.TableViewContextMenu.ResumeLayout(false);
+            this.ProceduresFunctionsContextMenu.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -206,6 +278,12 @@
         private System.Windows.Forms.Label DatabaseName;
         private System.Windows.Forms.Label HostName;
         private ORACLE_SQL_SERVER_Client.Controllers.SQLServerConnection dbConnection;
-        private System.Windows.Forms.TreeView treeView1;
+        private System.Windows.Forms.TreeView SQLServerObjects;
+        private System.Windows.Forms.ContextMenuStrip TableViewContextMenu;
+        private System.Windows.Forms.ContextMenuStrip ProceduresFunctionsContextMenu;
+        private System.Windows.Forms.ToolStripMenuItem ViewTableView;
+        private System.Windows.Forms.ToolStripMenuItem AddColumn;
+        private System.Windows.Forms.ToolStripMenuItem ViewProceduresFunctions;
+        private System.Windows.Forms.ToolStripMenuItem ProcedureFunctionEdit;
     }
 }

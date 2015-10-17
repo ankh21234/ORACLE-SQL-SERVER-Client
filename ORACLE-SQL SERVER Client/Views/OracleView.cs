@@ -75,6 +75,7 @@ namespace ORACLE_SQL_SERVER_Client.Views
                     
                 }
                 this.OracleObjects.Nodes[0].Nodes.Add(objectNode);
+                reader.Close();
             }
 
         }
@@ -102,6 +103,7 @@ namespace ORACLE_SQL_SERVER_Client.Views
                         reader = command.ExecuteReader();
                         data.Load(reader);
                         this.OracleResults.DataSource = data;
+                        reader.Close();
 
                     }
 

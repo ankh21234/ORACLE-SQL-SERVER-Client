@@ -35,7 +35,7 @@ namespace ORACLE_SQL_SERVER_Client.Controllers
             else
             {
                 connection = "Server =" + this.serverName + ";Database =" + this.databaseName +
-                ";Integrated Security= true; user = " + this.username + ";password =" + this.password;
+                ";Integrated Security= false; user = " + this.username + ";password =" + this.password;
                 dbConnection = new SqlConnection(connection);
             }
 
