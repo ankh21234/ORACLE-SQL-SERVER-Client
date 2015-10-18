@@ -29,13 +29,14 @@ namespace ORACLE_SQL_SERVER_Client.Controllers
             if (password == "")
             {
                 connection = "Server =" + this.serverName + ";Database =" + this.databaseName +
-                ";Integrated Security= true; user = " + this.username;
+                ";Integrated Security= true; user = " + this.username + " ; Application Name = ORACLE-SQL-SERVER-CLIENT";
                 dbConnection = new SqlConnection(connection);
             }
             else
             {
                 connection = "Server =" + this.serverName + ";Database =" + this.databaseName +
-                ";Integrated Security= false; user = " + this.username + ";password =" + this.password;
+                ";Integrated Security= false; user = " + this.username + ";password =" + 
+                this.password + "; Application Name = ORACLE-SQL-SERVER-CLIENT";
                 dbConnection = new SqlConnection(connection);
             }
 

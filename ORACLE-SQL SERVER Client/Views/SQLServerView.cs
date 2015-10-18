@@ -18,15 +18,7 @@ namespace ORACLE_SQL_SERVER_Client.Views
         {
             InitializeComponent();
             this.dbConnection = connection;
-            this.HostName.Text += connection.getServerName();
-            this.DatabaseName.Text += connection.getDatabaseConnection().Database;
-            this.Username.Text += connection.getUsername();
             refreshInitialize();
-        }
-
-        private void SQLServerView_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            Application.Exit();
         }
 
         private void ExecuteQueryButton_Click(object sender, EventArgs e)
@@ -102,6 +94,7 @@ namespace ORACLE_SQL_SERVER_Client.Views
                     reader = command.ExecuteReader();
                     data.Load(reader);
                     this.SQLServerResults.DataSource = data;
+                    reader.Close();
                 }
                 catch (Exception error)
                 {
@@ -124,17 +117,20 @@ namespace ORACLE_SQL_SERVER_Client.Views
 
         private void ViewTableView_Click(object sender, EventArgs e)
         {
-            String tableName = this.SQLServerObjects.SelectedNode.Text;
-            TableViewerSQLServer tableViewer = new TableViewerSQLServer(tableName, dbConnection, false);
+
+            TableViewerSQLServer tableViewer;
+            String name = this.SQLServerObjects.SelectedNode.Text;
+            if (this.SQLServerObjects.SelectedNode.Parent.Text == "VIEW")
+            {
+                tableViewer = new TableViewerSQLServer(name, dbConnection, true);
+            }
+            else
+            {
+                tableViewer = new TableViewerSQLServer(name, dbConnection, false);
+            }
             tableViewer.ShowDialog();
         }
 
-        private void AddColumn_Click(object sender, EventArgs e)
-        {
-            String tableName = this.SQLServerObjects.SelectedNode.Text;
-            TableViewerSQLServer tableViewer = new TableViewerSQLServer(tableName, dbConnection, true);
-            tableViewer.ShowDialog();
-        }
 
         private void refreshInitialize()
         {
@@ -239,6 +235,21 @@ namespace ORACLE_SQL_SERVER_Client.Views
             dbConnection.getDatabaseConnection().Close();
             new MainWindow().Show();
             this.Dispose();
+        }
+
+        private void sessionsButton_Click(object sender, EventArgs e)
+        {
+            new SQLServerSessionDetails(dbConnection).ShowDialog();
+        }
+
+        private void fileGroupButton_Click(object sender, EventArgs e)
+        {
+            new SQLServerFileGroupData(dbConnection).ShowDialog();
+        }
+
+        private void SQLServerView_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

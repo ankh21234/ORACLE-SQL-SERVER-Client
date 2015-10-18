@@ -23,8 +23,15 @@ namespace ORACLE_SQL_SERVER_Client.Views
 
             if (option)
             {
-                this.TableOptions.SelectedIndex = 1;
+                this.TableOptions.TabPages.Remove(TableAddColumn);
+                this.partitionNumber.Dispose();
+                this.tablePartitions.Dispose();
             }
+            else
+            {
+                partitions();
+            } 
+
             refreshInitialize();
         }
 
@@ -82,6 +89,28 @@ namespace ORACLE_SQL_SERVER_Client.Views
             reader = command.ExecuteReader();
             data.Load(reader);
             this.tableDetails.DataSource = data;
+            reader.Close();
+        }
+
+        private void partitions()
+        {
+            String query = "SELECT PARTITION_NUMBER " 
+                   + "FROM sys.partitions, sys.tables " 
+                   + "WHERE sys.partitions.object_id = sys.tables.object_id " 
+                   + "AND NAME = '" + this.tableName + "'";
+            SqlConnection dataBaseConnection = dbConnection.getDatabaseConnection();
+            SqlCommand command = new SqlCommand(query, dataBaseConnection);
+            DataTable data = new DataTable();
+            SqlDataReader reader;
+            command.CommandText = query;
+            command.CommandType = CommandType.Text;
+            reader = command.ExecuteReader();
+            while (reader.Read())
+            {
+                this.tablePartitions.Text = reader["PARTITION_NUMBER"].ToString();
+            }
+            this.tablePartitions.Enabled = false;
+            reader.Close();
         }
     }
 }
