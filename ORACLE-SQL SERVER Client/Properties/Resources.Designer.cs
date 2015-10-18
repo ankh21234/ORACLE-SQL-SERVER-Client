@@ -83,6 +83,16 @@ namespace ORACLE_SQL_SERVER_Client.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Oraclelogo {
+            get {
+                object obj = ResourceManager.GetObject("Oraclelogo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap sql_server_2014_logo {
             get {
                 object obj = ResourceManager.GetObject("sql-server-2014-logo", resourceCulture);

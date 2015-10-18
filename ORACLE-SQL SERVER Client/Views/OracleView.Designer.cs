@@ -37,22 +37,21 @@
             this.RefreshButton = new System.Windows.Forms.Button();
             this.ExecutionPlanButton = new System.Windows.Forms.Button();
             this.ExecuteQueryButton = new System.Windows.Forms.Button();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.Username = new System.Windows.Forms.Label();
-            this.DatabaseName = new System.Windows.Forms.Label();
-            this.HostName = new System.Windows.Forms.Label();
             this.OracleObjects = new System.Windows.Forms.TreeView();
             this.ViewTableViewMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.ViewTableView = new System.Windows.Forms.ToolStripMenuItem();
-            this.AddColumn = new System.Windows.Forms.ToolStripMenuItem();
             this.ProceduresFunctionsContextMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.extraOptions = new System.Windows.Forms.GroupBox();
+            this.tablespaceButton = new System.Windows.Forms.Button();
+            this.sessionsButton = new System.Windows.Forms.Button();
+            this.SqlServerImage = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.OracleResults)).BeginInit();
             this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
             this.ViewTableViewMenu.SuspendLayout();
             this.ProceduresFunctionsContextMenu.SuspendLayout();
+            this.extraOptions.SuspendLayout();
             this.SuspendLayout();
             // 
             // OracleConsole
@@ -105,30 +104,6 @@
             this.ExecuteQueryButton.UseVisualStyleBackColor = true;
             this.ExecuteQueryButton.Click += new System.EventHandler(this.ExecuteQueryButton_Click);
             // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.Username);
-            this.groupBox2.Controls.Add(this.DatabaseName);
-            this.groupBox2.Controls.Add(this.HostName);
-            resources.ApplyResources(this.groupBox2, "groupBox2");
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.TabStop = false;
-            // 
-            // Username
-            // 
-            resources.ApplyResources(this.Username, "Username");
-            this.Username.Name = "Username";
-            // 
-            // DatabaseName
-            // 
-            resources.ApplyResources(this.DatabaseName, "DatabaseName");
-            this.DatabaseName.Name = "DatabaseName";
-            // 
-            // HostName
-            // 
-            resources.ApplyResources(this.HostName, "HostName");
-            this.HostName.Name = "HostName";
-            // 
             // OracleObjects
             // 
             this.OracleObjects.ForeColor = System.Drawing.SystemColors.Window;
@@ -141,8 +116,7 @@
             // ViewTableViewMenu
             // 
             this.ViewTableViewMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ViewTableView,
-            this.AddColumn});
+            this.ViewTableView});
             this.ViewTableViewMenu.Name = "ViewTableViewMenu";
             resources.ApplyResources(this.ViewTableViewMenu, "ViewTableViewMenu");
             // 
@@ -151,12 +125,6 @@
             this.ViewTableView.Name = "ViewTableView";
             resources.ApplyResources(this.ViewTableView, "ViewTableView");
             this.ViewTableView.Click += new System.EventHandler(this.ViewTableView_Click);
-            // 
-            // AddColumn
-            // 
-            this.AddColumn.Name = "AddColumn";
-            resources.ApplyResources(this.AddColumn, "AddColumn");
-            this.AddColumn.Click += new System.EventHandler(this.AddColumn_Click);
             // 
             // ProceduresFunctionsContextMenu
             // 
@@ -176,12 +144,41 @@
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
             resources.ApplyResources(this.toolStripMenuItem2, "toolStripMenuItem2");
             // 
+            // extraOptions
+            // 
+            this.extraOptions.Controls.Add(this.tablespaceButton);
+            this.extraOptions.Controls.Add(this.sessionsButton);
+            resources.ApplyResources(this.extraOptions, "extraOptions");
+            this.extraOptions.Name = "extraOptions";
+            this.extraOptions.TabStop = false;
+            // 
+            // tablespaceButton
+            // 
+            resources.ApplyResources(this.tablespaceButton, "tablespaceButton");
+            this.tablespaceButton.Name = "tablespaceButton";
+            this.tablespaceButton.UseVisualStyleBackColor = true;
+            this.tablespaceButton.Click += new System.EventHandler(this.tablespaceButton_Click);
+            // 
+            // sessionsButton
+            // 
+            resources.ApplyResources(this.sessionsButton, "sessionsButton");
+            this.sessionsButton.Name = "sessionsButton";
+            this.sessionsButton.UseVisualStyleBackColor = true;
+            this.sessionsButton.Click += new System.EventHandler(this.sessionsButton_Click);
+            // 
+            // SqlServerImage
+            // 
+            this.SqlServerImage.BackgroundImage = global::ORACLE_SQL_SERVER_Client.Properties.Resources.Oraclelogo;
+            resources.ApplyResources(this.SqlServerImage, "SqlServerImage");
+            this.SqlServerImage.Name = "SqlServerImage";
+            // 
             // OracleView
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.SqlServerImage);
+            this.Controls.Add(this.extraOptions);
             this.Controls.Add(this.OracleObjects);
-            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.OracleResults);
             this.Controls.Add(this.OracleConsole);
@@ -189,10 +186,9 @@
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.OracleView_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.OracleResults)).EndInit();
             this.groupBox1.ResumeLayout(false);
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
             this.ViewTableViewMenu.ResumeLayout(false);
             this.ProceduresFunctionsContextMenu.ResumeLayout(false);
+            this.extraOptions.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -206,16 +202,15 @@
         private System.Windows.Forms.Button ExecutionPlanButton;
         private System.Windows.Forms.Button ExecuteQueryButton;
         private Controllers.OracleDBConnection dbConnection;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Label Username;
-        private System.Windows.Forms.Label DatabaseName;
-        private System.Windows.Forms.Label HostName;
         private System.Windows.Forms.TreeView OracleObjects;
         private System.Windows.Forms.ContextMenuStrip ViewTableViewMenu;
         private System.Windows.Forms.ToolStripMenuItem ViewTableView;
-        private System.Windows.Forms.ToolStripMenuItem AddColumn;
         private System.Windows.Forms.ContextMenuStrip ProceduresFunctionsContextMenu;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
+        private System.Windows.Forms.GroupBox extraOptions;
+        private System.Windows.Forms.Button tablespaceButton;
+        private System.Windows.Forms.Button sessionsButton;
+        private System.Windows.Forms.Panel SqlServerImage;
     }
 }

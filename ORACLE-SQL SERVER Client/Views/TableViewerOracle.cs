@@ -21,7 +21,13 @@ namespace ORACLE_SQL_SERVER_Client.Views
             this.tableName = tableName;
             if (option)
             {
-                this.tableDetails.TabIndex = 1;
+                this.TableOptions.TabPages.Remove(TableAddColumn);
+                this.partitionNumber.Dispose();
+                this.tablePartitions.Dispose();
+            }
+            else
+            {
+                partitions();
             }
             refreshInitializeTable();
 
@@ -32,7 +38,8 @@ namespace ORACLE_SQL_SERVER_Client.Views
             OracleConnection connection = this.dbConnection.getDatabaseConnection();
             String query;
            
-            if (dataType.Text == "BLOB" || dataType.Text == "CLOB" || dataType.Text == "DATE")
+            if (dataType.Text == "BLOB" || dataType.Text == "CLOB" || dataType.Text == "DATE" 
+                || dataType.Text == "BFILE")
             {
                     query = "ALTER TABLE " + this.tableName + " " +
                     "ADD " + this.columnNameText.Text + " " + this.dataType.Text;
@@ -79,7 +86,8 @@ namespace ORACLE_SQL_SERVER_Client.Views
 
         private void dataType_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (dataType.Text == "BLOB" || dataType.Text == "CLOB" || dataType.Text == "DATE")
+            if (dataType.Text == "BLOB" || dataType.Text == "CLOB" || dataType.Text == "DATE" || 
+                dataType.Text == "BFILE")
             {
                 this.precisionText.Enabled = false;
             }
@@ -103,6 +111,27 @@ namespace ORACLE_SQL_SERVER_Client.Views
             reader = command.ExecuteReader();
             data.Load(reader);
             this.tableDetails.DataSource = data;
+            reader.Close();
+        }
+
+        private void partitions()
+        {
+            String query = "SELECT PARTITION_COUNT FROM USER_PART_TABLES "
+            + "WHERE TABLE_NAME = '" + this.tableName + "'";
+            OracleConnection dataBaseConnection = dbConnection.getDatabaseConnection();
+            OracleCommand command = new OracleCommand(query, dataBaseConnection);
+            DataTable data = new DataTable();
+            OracleDataReader reader;
+            command.CommandText = query;
+            command.CommandType = CommandType.Text;
+            reader = command.ExecuteReader();
+            while (reader.Read())
+            {
+                this.tablePartitions.Text = reader["PARTITION_COUNT"].ToString();  
+            }
+            this.tablePartitions.Enabled = false;
+            reader.Close();
+
         }
     }
 }

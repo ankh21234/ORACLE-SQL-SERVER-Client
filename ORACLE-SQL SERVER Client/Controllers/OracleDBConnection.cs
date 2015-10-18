@@ -50,5 +50,10 @@ namespace ORACLE_SQL_SERVER_Client.Controllers
         {
             return username;
         }
+
+        public String getSID()
+        {
+            return SID;
+        }
     }
 }

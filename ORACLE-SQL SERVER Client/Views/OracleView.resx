@@ -141,7 +141,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;OracleConsole.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="OracleResults.Location" type="System.Drawing.Point, System.Drawing">
     <value>234, 434</value>
@@ -162,19 +162,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;OracleResults.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="DisconnectButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>134, 49</value>
-  </data>
-  <data name="DisconnectButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>88, 23</value>
-  </data>
-  <data name="DisconnectButton.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="DisconnectButton.Text" xml:space="preserve">
-    <value>Disconnect</value>
+    <value>6</value>
   </data>
   <data name="&gt;&gt;DisconnectButton.Name" xml:space="preserve">
     <value>DisconnectButton</value>
@@ -188,18 +176,6 @@
   <data name="&gt;&gt;DisconnectButton.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="RefreshButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>36, 49</value>
-  </data>
-  <data name="RefreshButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>92, 23</value>
-  </data>
-  <data name="RefreshButton.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="RefreshButton.Text" xml:space="preserve">
-    <value>Refresh</value>
-  </data>
   <data name="&gt;&gt;RefreshButton.Name" xml:space="preserve">
     <value>RefreshButton</value>
   </data>
@@ -212,18 +188,6 @@
   <data name="&gt;&gt;RefreshButton.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="ExecutionPlanButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>134, 20</value>
-  </data>
-  <data name="ExecutionPlanButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>88, 23</value>
-  </data>
-  <data name="ExecutionPlanButton.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="ExecutionPlanButton.Text" xml:space="preserve">
-    <value>Execution Plan</value>
-  </data>
   <data name="&gt;&gt;ExecutionPlanButton.Name" xml:space="preserve">
     <value>ExecutionPlanButton</value>
   </data>
@@ -235,22 +199,6 @@
   </data>
   <data name="&gt;&gt;ExecutionPlanButton.ZOrder" xml:space="preserve">
     <value>2</value>
-  </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="ExecuteQueryButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="ExecuteQueryButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>36, 20</value>
-  </data>
-  <data name="ExecuteQueryButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>92, 23</value>
-  </data>
-  <data name="ExecuteQueryButton.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="ExecuteQueryButton.Text" xml:space="preserve">
-    <value>Execute Query</value>
   </data>
   <data name="&gt;&gt;ExecuteQueryButton.Name" xml:space="preserve">
     <value>ExecuteQueryButton</value>
@@ -286,166 +234,116 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;groupBox1.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
-  <data name="&gt;&gt;Username.Name" xml:space="preserve">
-    <value>Username</value>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="DisconnectButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
-  <data name="&gt;&gt;Username.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="DisconnectButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>134, 49</value>
   </data>
-  <data name="&gt;&gt;Username.Parent" xml:space="preserve">
-    <value>groupBox2</value>
+  <data name="DisconnectButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>88, 23</value>
   </data>
-  <data name="&gt;&gt;Username.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;DatabaseName.Name" xml:space="preserve">
-    <value>DatabaseName</value>
-  </data>
-  <data name="&gt;&gt;DatabaseName.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;DatabaseName.Parent" xml:space="preserve">
-    <value>groupBox2</value>
-  </data>
-  <data name="&gt;&gt;DatabaseName.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;HostName.Name" xml:space="preserve">
-    <value>HostName</value>
-  </data>
-  <data name="&gt;&gt;HostName.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;HostName.Parent" xml:space="preserve">
-    <value>groupBox2</value>
-  </data>
-  <data name="&gt;&gt;HostName.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="groupBox2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>911, 130</value>
-  </data>
-  <data name="groupBox2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>264, 123</value>
-  </data>
-  <data name="groupBox2.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="groupBox2.Text" xml:space="preserve">
-    <value>SessionDetails</value>
-  </data>
-  <data name="&gt;&gt;groupBox2.Name" xml:space="preserve">
-    <value>groupBox2</value>
-  </data>
-  <data name="&gt;&gt;groupBox2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;groupBox2.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;groupBox2.ZOrder" xml:space="preserve">
+  <data name="DisconnectButton.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
-  <data name="Username.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="DisconnectButton.Text" xml:space="preserve">
+    <value>Disconnect</value>
   </data>
-  <data name="Username.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 14pt</value>
+  <data name="&gt;&gt;DisconnectButton.Name" xml:space="preserve">
+    <value>DisconnectButton</value>
   </data>
-  <data name="Username.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+  <data name="&gt;&gt;DisconnectButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="Username.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 64</value>
+  <data name="&gt;&gt;DisconnectButton.Parent" xml:space="preserve">
+    <value>groupBox1</value>
   </data>
-  <data name="Username.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
-    <value>No</value>
-  </data>
-  <data name="Username.Size" type="System.Drawing.Size, System.Drawing">
-    <value>54, 24</value>
-  </data>
-  <data name="Username.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="Username.Text" xml:space="preserve">
-    <value>User:</value>
-  </data>
-  <data name="&gt;&gt;Username.Name" xml:space="preserve">
-    <value>Username</value>
-  </data>
-  <data name="&gt;&gt;Username.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;Username.Parent" xml:space="preserve">
-    <value>groupBox2</value>
-  </data>
-  <data name="&gt;&gt;Username.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;DisconnectButton.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="DatabaseName.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="DatabaseName.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 14pt</value>
-  </data>
-  <data name="DatabaseName.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="RefreshButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="DatabaseName.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 40</value>
+  <data name="RefreshButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>36, 49</value>
   </data>
-  <data name="DatabaseName.Size" type="System.Drawing.Size, System.Drawing">
-    <value>93, 24</value>
+  <data name="RefreshButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>92, 23</value>
   </data>
-  <data name="DatabaseName.TabIndex" type="System.Int32, mscorlib">
+  <data name="RefreshButton.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="RefreshButton.Text" xml:space="preserve">
+    <value>Refresh</value>
+  </data>
+  <data name="&gt;&gt;RefreshButton.Name" xml:space="preserve">
+    <value>RefreshButton</value>
+  </data>
+  <data name="&gt;&gt;RefreshButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;RefreshButton.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;RefreshButton.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="DatabaseName.Text" xml:space="preserve">
-    <value>Database:</value>
+  <data name="ExecutionPlanButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
-  <data name="&gt;&gt;DatabaseName.Name" xml:space="preserve">
-    <value>DatabaseName</value>
+  <data name="ExecutionPlanButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>134, 20</value>
   </data>
-  <data name="&gt;&gt;DatabaseName.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="ExecutionPlanButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>88, 23</value>
   </data>
-  <data name="&gt;&gt;DatabaseName.Parent" xml:space="preserve">
-    <value>groupBox2</value>
-  </data>
-  <data name="&gt;&gt;DatabaseName.ZOrder" xml:space="preserve">
+  <data name="ExecutionPlanButton.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-  <data name="HostName.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="ExecutionPlanButton.Text" xml:space="preserve">
+    <value>Execution Plan</value>
   </data>
-  <data name="HostName.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 14pt</value>
+  <data name="&gt;&gt;ExecutionPlanButton.Name" xml:space="preserve">
+    <value>ExecutionPlanButton</value>
   </data>
-  <data name="HostName.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 16</value>
+  <data name="&gt;&gt;ExecutionPlanButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="HostName.Size" type="System.Drawing.Size, System.Drawing">
-    <value>58, 24</value>
+  <data name="&gt;&gt;ExecutionPlanButton.Parent" xml:space="preserve">
+    <value>groupBox1</value>
   </data>
-  <data name="HostName.TabIndex" type="System.Int32, mscorlib">
+  <data name="&gt;&gt;ExecutionPlanButton.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="ExecuteQueryButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="ExecuteQueryButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>36, 20</value>
+  </data>
+  <data name="ExecuteQueryButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>92, 23</value>
+  </data>
+  <data name="ExecuteQueryButton.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="HostName.Text" xml:space="preserve">
-    <value>Host: </value>
+  <data name="ExecuteQueryButton.Text" xml:space="preserve">
+    <value>Execute Query</value>
   </data>
-  <data name="&gt;&gt;HostName.Name" xml:space="preserve">
-    <value>HostName</value>
+  <data name="&gt;&gt;ExecuteQueryButton.Name" xml:space="preserve">
+    <value>ExecuteQueryButton</value>
   </data>
-  <data name="&gt;&gt;HostName.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;ExecuteQueryButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;HostName.Parent" xml:space="preserve">
-    <value>groupBox2</value>
+  <data name="&gt;&gt;ExecuteQueryButton.Parent" xml:space="preserve">
+    <value>groupBox1</value>
   </data>
-  <data name="&gt;&gt;HostName.ZOrder" xml:space="preserve">
-    <value>2</value>
+  <data name="&gt;&gt;ExecuteQueryButton.ZOrder" xml:space="preserve">
+    <value>3</value>
   </data>
   <data name="OracleObjects.Location" type="System.Drawing.Point, System.Drawing">
     <value>6, 16</value>
@@ -482,13 +380,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;OracleObjects.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>4</value>
   </data>
   <metadata name="ViewTableViewMenu.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
   <data name="ViewTableViewMenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>141, 48</value>
+    <value>100, 26</value>
   </data>
   <data name="&gt;&gt;ViewTableViewMenu.Name" xml:space="preserve">
     <value>ViewTableViewMenu</value>
@@ -497,16 +395,10 @@
     <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="ViewTableView.Size" type="System.Drawing.Size, System.Drawing">
-    <value>140, 22</value>
+    <value>99, 22</value>
   </data>
   <data name="ViewTableView.Text" xml:space="preserve">
     <value>View</value>
-  </data>
-  <data name="AddColumn.Size" type="System.Drawing.Size, System.Drawing">
-    <value>140, 22</value>
-  </data>
-  <data name="AddColumn.Text" xml:space="preserve">
-    <value>Add column</value>
   </data>
   <metadata name="ProceduresFunctionsContextMenu.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>172, 17</value>
@@ -532,6 +424,108 @@
   <data name="toolStripMenuItem2.Text" xml:space="preserve">
     <value>Edit</value>
   </data>
+  <data name="tablespaceButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="tablespaceButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>134, 36</value>
+  </data>
+  <data name="tablespaceButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>103, 23</value>
+  </data>
+  <data name="tablespaceButton.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="tablespaceButton.Text" xml:space="preserve">
+    <value>Table Space Data</value>
+  </data>
+  <data name="&gt;&gt;tablespaceButton.Name" xml:space="preserve">
+    <value>tablespaceButton</value>
+  </data>
+  <data name="&gt;&gt;tablespaceButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tablespaceButton.Parent" xml:space="preserve">
+    <value>extraOptions</value>
+  </data>
+  <data name="&gt;&gt;tablespaceButton.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="sessionsButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="sessionsButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>36, 36</value>
+  </data>
+  <data name="sessionsButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>92, 23</value>
+  </data>
+  <data name="sessionsButton.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="sessionsButton.Text" xml:space="preserve">
+    <value>Session Data</value>
+  </data>
+  <data name="&gt;&gt;sessionsButton.Name" xml:space="preserve">
+    <value>sessionsButton</value>
+  </data>
+  <data name="&gt;&gt;sessionsButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;sessionsButton.Parent" xml:space="preserve">
+    <value>extraOptions</value>
+  </data>
+  <data name="&gt;&gt;sessionsButton.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="extraOptions.Location" type="System.Drawing.Point, System.Drawing">
+    <value>911, 134</value>
+  </data>
+  <data name="extraOptions.Size" type="System.Drawing.Size, System.Drawing">
+    <value>264, 75</value>
+  </data>
+  <data name="extraOptions.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="extraOptions.Text" xml:space="preserve">
+    <value>Extra Options</value>
+  </data>
+  <data name="&gt;&gt;extraOptions.Name" xml:space="preserve">
+    <value>extraOptions</value>
+  </data>
+  <data name="&gt;&gt;extraOptions.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;extraOptions.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;extraOptions.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="SqlServerImage.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Center</value>
+  </data>
+  <data name="SqlServerImage.Location" type="System.Drawing.Point, System.Drawing">
+    <value>908, 422</value>
+  </data>
+  <data name="SqlServerImage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>283, 258</value>
+  </data>
+  <data name="SqlServerImage.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="&gt;&gt;SqlServerImage.Name" xml:space="preserve">
+    <value>SqlServerImage</value>
+  </data>
+  <data name="&gt;&gt;SqlServerImage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SqlServerImage.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;SqlServerImage.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -539,7 +533,7 @@
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>1184, 692</value>
+    <value>1201, 692</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>OracleView</value>
@@ -548,12 +542,6 @@
     <value>ViewTableView</value>
   </data>
   <data name="&gt;&gt;ViewTableView.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;AddColumn.Name" xml:space="preserve">
-    <value>AddColumn</value>
-  </data>
-  <data name="&gt;&gt;AddColumn.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;toolStripMenuItem1.Name" xml:space="preserve">

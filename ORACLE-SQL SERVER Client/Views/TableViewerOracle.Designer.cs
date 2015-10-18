@@ -42,6 +42,8 @@
             this.columnNameText = new System.Windows.Forms.TextBox();
             this.columnDataType = new System.Windows.Forms.Label();
             this.columnNameLabel = new System.Windows.Forms.Label();
+            this.partitionNumber = new System.Windows.Forms.Label();
+            this.tablePartitions = new System.Windows.Forms.TextBox();
             this.TableOptions.SuspendLayout();
             this.ViewTableViewAttributes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tableDetails)).BeginInit();
@@ -132,9 +134,11 @@
             "DATE",
             "VARCHAR",
             "VARCHAR2",
+            "CHAR",
             "TIMESTAMP",
             "CLOB",
             "BLOB",
+            "BFILE",
             "FLOAT"});
             this.dataType.Location = new System.Drawing.Point(122, 65);
             this.dataType.Name = "dataType";
@@ -196,11 +200,29 @@
             this.columnNameLabel.TabIndex = 0;
             this.columnNameLabel.Text = "Column Name";
             // 
+            // partitionNumber
+            // 
+            this.partitionNumber.AutoSize = true;
+            this.partitionNumber.Location = new System.Drawing.Point(570, 21);
+            this.partitionNumber.Name = "partitionNumber";
+            this.partitionNumber.Size = new System.Drawing.Size(102, 13);
+            this.partitionNumber.TabIndex = 4;
+            this.partitionNumber.Text = "Number of Partitions";
+            // 
+            // tablePartitions
+            // 
+            this.tablePartitions.Location = new System.Drawing.Point(570, 42);
+            this.tablePartitions.Name = "tablePartitions";
+            this.tablePartitions.Size = new System.Drawing.Size(100, 20);
+            this.tablePartitions.TabIndex = 3;
+            // 
             // TableViewerOracle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(569, 323);
+            this.ClientSize = new System.Drawing.Size(689, 332);
+            this.Controls.Add(this.partitionNumber);
+            this.Controls.Add(this.tablePartitions);
             this.Controls.Add(this.TableOptions);
             this.Name = "TableViewerOracle";
             this.Text = "TableViewerOracle";
@@ -211,6 +233,7 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -232,5 +255,7 @@
         private System.Windows.Forms.ComboBox dataType;
         private System.Windows.Forms.TextBox precisionText;
         public System.Windows.Forms.Label precisionLabel;
+        private System.Windows.Forms.Label partitionNumber;
+        private System.Windows.Forms.TextBox tablePartitions;
     }
 }

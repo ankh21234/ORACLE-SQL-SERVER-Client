@@ -19,9 +19,6 @@ namespace ORACLE_SQL_SERVER_Client.Views
         {
             InitializeComponent();
             this.dbConnection = connection;
-            this.DatabaseName.Text += " " + connection.getDatabaseConnection().DataSource;
-            this.HostName.Text += " " +connection.getDatabaseConnection().HostName;
-            this.Username.Text += " " + connection.getUsername();
             this.dbConnection.createConnection();
             InitializeRefresh();
         }
@@ -101,6 +98,7 @@ namespace ORACLE_SQL_SERVER_Client.Views
                     reader = command.ExecuteReader();
                     data.Load(reader);
                     this.OracleResults.DataSource = data;
+                    reader.Close();
 
                 }
                 catch (Exception error)
@@ -120,15 +118,18 @@ namespace ORACLE_SQL_SERVER_Client.Views
 
         private void ViewTableView_Click(object sender, EventArgs e)
         {
-            String tableName = this.OracleObjects.SelectedNode.Text;
-            TableViewerOracle tableViewer = new TableViewerOracle(tableName, dbConnection, false);
-            tableViewer.ShowDialog();
-        }
+            String name = this.OracleObjects.SelectedNode.Text;
+            TableViewerOracle tableViewer;
+            if (this.OracleObjects.SelectedNode.Parent.Text == "VIEW" ||
+                this.OracleObjects.SelectedNode.Parent.Text == "MATERIALIZED VIEW")
+            {
+                tableViewer = new TableViewerOracle(name, dbConnection, true);
+            }
+            else
+            {
+                tableViewer = new TableViewerOracle(name, dbConnection, false);
+            }
 
-        private void AddColumn_Click(object sender, EventArgs e)
-        {
-            String tableName = this.OracleObjects.SelectedNode.Text;
-            TableViewerOracle tableViewer = new TableViewerOracle(tableName, dbConnection, true);
             tableViewer.ShowDialog();
         }
 
@@ -185,7 +186,7 @@ namespace ORACLE_SQL_SERVER_Client.Views
                     subObjectNode.Text = j;
                     subObjectNode.ForeColor = System.Drawing.Color.Black;
 
-                    if (i == "TABLE" || i == "VIEW")
+                    if (i == "TABLE" || i == "VIEW" || i == "MATERIALIZED VIEW")
                     {
                         subObjectNode.ContextMenuStrip = this.ViewTableViewMenu;
                     }
@@ -198,11 +199,6 @@ namespace ORACLE_SQL_SERVER_Client.Views
             }
         }
 
-        private void OracleView_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            Application.Exit();
-        }
-
         private void RefreshButton_Click(object sender, EventArgs e)
         {
             InitializeRefresh();
@@ -213,6 +209,21 @@ namespace ORACLE_SQL_SERVER_Client.Views
             dbConnection.getDatabaseConnection().Close();
             new MainWindow().Show();
             this.Dispose();
+        }
+
+        private void sessionsButton_Click(object sender, EventArgs e)
+        {
+            new OracleSessionDetails(dbConnection).ShowDialog();
+        }
+
+        private void tablespaceButton_Click(object sender, EventArgs e)
+        {
+            new OracleTableSpaceData(dbConnection).ShowDialog();
+        }
+
+        private void OracleView_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
