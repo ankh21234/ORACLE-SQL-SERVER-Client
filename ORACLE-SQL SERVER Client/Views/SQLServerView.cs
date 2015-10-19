@@ -30,7 +30,10 @@ namespace ORACLE_SQL_SERVER_Client.Views
                 String operation;
                 this.dbConnection.createConnection();
                 SqlConnection dbConnection = this.dbConnection.getDatabaseConnection();
-                query = query.Remove(query.Length - 1);
+                if (query.Substring(query.Length - 1) == ";")
+                {
+                    query = query.Remove(query.Length - 1);
+                };
                 query.ToUpper();
                 SqlCommand command = new SqlCommand(query, dbConnection);
                 SqlDataReader reader;
