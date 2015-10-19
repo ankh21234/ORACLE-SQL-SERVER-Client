@@ -269,5 +269,13 @@ namespace ORACLE_SQL_SERVER_Client.Views
             Views.SQLServerDll tableViewer = new SQLServerDll(tableName, dbConnection, false);
             tableViewer.ShowDialog();
         }
+
+        private void indexDDLToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            String tableName = this.SQLServerObjects.SelectedNode.Text;
+            Views.SQLServerDllIndex tableViewer = new SQLServerDllIndex(tableName, dbConnection, false);
+            tableViewer.ShowDialog();
+
+        }
     }
 }

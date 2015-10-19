@@ -49,6 +49,7 @@
             this.fileGroupButton = new System.Windows.Forms.Button();
             this.sessionsButton = new System.Windows.Forms.Button();
             this.SqlServerImage = new System.Windows.Forms.Panel();
+            this.indexDDLToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.SQLServerResults)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.TableViewContextMenu.SuspendLayout();
@@ -151,15 +152,16 @@
             // 
             this.TableViewContextMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ViewTableView,
-            this.dDLToolStripMenuItem});
+            this.dDLToolStripMenuItem,
+            this.indexDDLToolStripMenuItem});
             this.TableViewContextMenu.Name = "TableViewContextMenu";
-            this.TableViewContextMenu.Size = new System.Drawing.Size(100, 48);
+            this.TableViewContextMenu.Size = new System.Drawing.Size(153, 92);
             // 
             // ViewTableView
             // 
             this.ViewTableView.AutoToolTip = true;
             this.ViewTableView.Name = "ViewTableView";
-            this.ViewTableView.Size = new System.Drawing.Size(99, 22);
+            this.ViewTableView.Size = new System.Drawing.Size(152, 22);
             this.ViewTableView.Text = "View";
             this.ViewTableView.ToolTipText = "View table properties";
             this.ViewTableView.Click += new System.EventHandler(this.ViewTableView_Click);
@@ -167,7 +169,7 @@
             // dDLToolStripMenuItem
             // 
             this.dDLToolStripMenuItem.Name = "dDLToolStripMenuItem";
-            this.dDLToolStripMenuItem.Size = new System.Drawing.Size(99, 22);
+            this.dDLToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.dDLToolStripMenuItem.Text = "DDL";
             this.dDLToolStripMenuItem.Click += new System.EventHandler(this.dDLToolStripMenuItem_Click);
             // 
@@ -227,6 +229,13 @@
             this.SqlServerImage.Size = new System.Drawing.Size(283, 258);
             this.SqlServerImage.TabIndex = 8;
             // 
+            // indexDDLToolStripMenuItem
+            // 
+            this.indexDDLToolStripMenuItem.Name = "indexDDLToolStripMenuItem";
+            this.indexDDLToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.indexDDLToolStripMenuItem.Text = "Index DDL";
+            this.indexDDLToolStripMenuItem.Click += new System.EventHandler(this.indexDDLToolStripMenuItem_Click);
+            // 
             // SQLServerView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -270,5 +279,6 @@
         private System.Windows.Forms.Button sessionsButton;
         private System.Windows.Forms.Panel SqlServerImage;
         private System.Windows.Forms.ToolStripMenuItem dDLToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem indexDDLToolStripMenuItem;
     }
 }

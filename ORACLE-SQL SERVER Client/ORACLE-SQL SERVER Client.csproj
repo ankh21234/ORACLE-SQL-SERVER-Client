@@ -139,6 +139,12 @@
     <Compile Include="Views\PasswordForm.Designer.cs">
       <DependentUpon>PasswordForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\SQLServerDllIndex.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\SQLServerDllIndex.Designer.cs">
+      <DependentUpon>SQLServerDllIndex.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\SQLServerDll.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -212,6 +218,9 @@
     <EmbeddedResource Include="Views\PasswordForm.resx">
       <DependentUpon>PasswordForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\SQLServerDllIndex.resx">
+      <DependentUpon>SQLServerDllIndex.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\SQLServerDll.resx">
       <DependentUpon>SQLServerDll.cs</DependentUpon>
     </EmbeddedResource>
@@ -275,6 +284,9 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resources\DDL_Extractor_Proc.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\DDL_Extractor_Index_Proc.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
