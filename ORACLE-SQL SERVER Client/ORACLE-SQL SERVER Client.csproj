@@ -139,11 +139,23 @@
     <Compile Include="Views\PasswordForm.Designer.cs">
       <DependentUpon>PasswordForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\SQLServerDll.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\SQLServerDll.Designer.cs">
+      <DependentUpon>SQLServerDll.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\SQLServerFileGroupData.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Views\SQLServerFileGroupData.Designer.cs">
       <DependentUpon>SQLServerFileGroupData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SQLServerIndexViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\SQLServerIndexViewer.Designer.cs">
+      <DependentUpon>SQLServerIndexViewer.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\SQLServerSessionDetails.cs">
       <SubType>Form</SubType>
@@ -168,6 +180,12 @@
     </Compile>
     <Compile Include="Views\TableViewerSQLServer.Designer.cs">
       <DependentUpon>TableViewerSQLServer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SQLServerProcedureViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\SQLServerProcedureViewer.Designer.cs">
+      <DependentUpon>SQLServerProcedureViewer.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Views\MainWindow.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>
@@ -194,6 +212,9 @@
     <EmbeddedResource Include="Views\PasswordForm.resx">
       <DependentUpon>PasswordForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\SQLServerDll.resx">
+      <DependentUpon>SQLServerDll.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\SQLServerFileGroupData.resx">
       <DependentUpon>SQLServerFileGroupData.cs</DependentUpon>
     </EmbeddedResource>
@@ -208,6 +229,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\TableViewerSQLServer.resx">
       <DependentUpon>TableViewerSQLServer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\SQLServerProcedureViewer.resx">
+      <DependentUpon>SQLServerProcedureViewer.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -248,6 +272,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Oraclelogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\DDL_Extractor_Proc.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

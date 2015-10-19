@@ -42,12 +42,12 @@
             this.SQLServerObjects = new System.Windows.Forms.TreeView();
             this.TableViewContextMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.ViewTableView = new System.Windows.Forms.ToolStripMenuItem();
+            this.dDLToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ProceduresFunctionsContextMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.ViewProceduresFunctions = new System.Windows.Forms.ToolStripMenuItem();
-            this.ProcedureFunctionEdit = new System.Windows.Forms.ToolStripMenuItem();
             this.extraOptions = new System.Windows.Forms.GroupBox();
-            this.sessionsButton = new System.Windows.Forms.Button();
             this.fileGroupButton = new System.Windows.Forms.Button();
+            this.sessionsButton = new System.Windows.Forms.Button();
             this.SqlServerImage = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.SQLServerResults)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -150,9 +150,10 @@
             // TableViewContextMenu
             // 
             this.TableViewContextMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ViewTableView});
+            this.ViewTableView,
+            this.dDLToolStripMenuItem});
             this.TableViewContextMenu.Name = "TableViewContextMenu";
-            this.TableViewContextMenu.Size = new System.Drawing.Size(100, 26);
+            this.TableViewContextMenu.Size = new System.Drawing.Size(100, 48);
             // 
             // ViewTableView
             // 
@@ -163,29 +164,28 @@
             this.ViewTableView.ToolTipText = "View table properties";
             this.ViewTableView.Click += new System.EventHandler(this.ViewTableView_Click);
             // 
+            // dDLToolStripMenuItem
+            // 
+            this.dDLToolStripMenuItem.Name = "dDLToolStripMenuItem";
+            this.dDLToolStripMenuItem.Size = new System.Drawing.Size(99, 22);
+            this.dDLToolStripMenuItem.Text = "DDL";
+            this.dDLToolStripMenuItem.Click += new System.EventHandler(this.dDLToolStripMenuItem_Click);
+            // 
             // ProceduresFunctionsContextMenu
             // 
             this.ProceduresFunctionsContextMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ViewProceduresFunctions,
-            this.ProcedureFunctionEdit});
+            this.ViewProceduresFunctions});
             this.ProceduresFunctionsContextMenu.Name = "ProceduresFunctionsContextMenu";
-            this.ProceduresFunctionsContextMenu.Size = new System.Drawing.Size(100, 48);
+            this.ProceduresFunctionsContextMenu.Size = new System.Drawing.Size(97, 26);
             // 
             // ViewProceduresFunctions
             // 
             this.ViewProceduresFunctions.AutoToolTip = true;
             this.ViewProceduresFunctions.Name = "ViewProceduresFunctions";
-            this.ViewProceduresFunctions.Size = new System.Drawing.Size(99, 22);
-            this.ViewProceduresFunctions.Text = "View";
+            this.ViewProceduresFunctions.Size = new System.Drawing.Size(96, 22);
+            this.ViewProceduresFunctions.Text = "DDL";
             this.ViewProceduresFunctions.ToolTipText = "View code contents";
-            // 
-            // ProcedureFunctionEdit
-            // 
-            this.ProcedureFunctionEdit.AutoToolTip = true;
-            this.ProcedureFunctionEdit.Name = "ProcedureFunctionEdit";
-            this.ProcedureFunctionEdit.Size = new System.Drawing.Size(99, 22);
-            this.ProcedureFunctionEdit.Text = "Edit";
-            this.ProcedureFunctionEdit.ToolTipText = "Edit code";
+            this.ViewProceduresFunctions.Click += new System.EventHandler(this.ViewProceduresFunctions_Click);
             // 
             // extraOptions
             // 
@@ -198,16 +198,6 @@
             this.extraOptions.TabStop = false;
             this.extraOptions.Text = "Extra Options";
             // 
-            // sessionsButton
-            // 
-            this.sessionsButton.Location = new System.Drawing.Point(36, 36);
-            this.sessionsButton.Name = "sessionsButton";
-            this.sessionsButton.Size = new System.Drawing.Size(92, 23);
-            this.sessionsButton.TabIndex = 0;
-            this.sessionsButton.Text = "Session Data";
-            this.sessionsButton.UseVisualStyleBackColor = true;
-            this.sessionsButton.Click += new System.EventHandler(this.sessionsButton_Click);
-            // 
             // fileGroupButton
             // 
             this.fileGroupButton.Location = new System.Drawing.Point(134, 36);
@@ -217,6 +207,16 @@
             this.fileGroupButton.Text = "File Group Data";
             this.fileGroupButton.UseVisualStyleBackColor = true;
             this.fileGroupButton.Click += new System.EventHandler(this.fileGroupButton_Click);
+            // 
+            // sessionsButton
+            // 
+            this.sessionsButton.Location = new System.Drawing.Point(36, 36);
+            this.sessionsButton.Name = "sessionsButton";
+            this.sessionsButton.Size = new System.Drawing.Size(92, 23);
+            this.sessionsButton.TabIndex = 0;
+            this.sessionsButton.Text = "Session Data";
+            this.sessionsButton.UseVisualStyleBackColor = true;
+            this.sessionsButton.Click += new System.EventHandler(this.sessionsButton_Click);
             // 
             // SqlServerImage
             // 
@@ -265,10 +265,10 @@
         private System.Windows.Forms.ContextMenuStrip ProceduresFunctionsContextMenu;
         private System.Windows.Forms.ToolStripMenuItem ViewTableView;
         private System.Windows.Forms.ToolStripMenuItem ViewProceduresFunctions;
-        private System.Windows.Forms.ToolStripMenuItem ProcedureFunctionEdit;
         private System.Windows.Forms.GroupBox extraOptions;
         private System.Windows.Forms.Button fileGroupButton;
         private System.Windows.Forms.Button sessionsButton;
         private System.Windows.Forms.Panel SqlServerImage;
+        private System.Windows.Forms.ToolStripMenuItem dDLToolStripMenuItem;
     }
 }
