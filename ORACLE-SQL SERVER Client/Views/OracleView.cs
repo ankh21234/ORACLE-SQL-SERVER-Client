@@ -30,9 +30,11 @@ namespace ORACLE_SQL_SERVER_Client.Views
                 String [] array;
                 String query = this.OracleConsole.Text;
                 String operation;
-                String invalidOperation;
                 OracleConnection dbConnection = this.dbConnection.getDatabaseConnection();
-                query = query.Remove(query.Length - 1);
+                if (query.Substring(query.Length - 1) == ";")
+                {
+                    query = query.Remove(query.Length - 1);
+                };
                 query.ToUpper();
                 OracleCommand command = new OracleCommand(query, dbConnection);
                 OracleDataReader reader;
@@ -55,9 +57,38 @@ namespace ORACLE_SQL_SERVER_Client.Views
                     {
                         MessageBox.Show(error.Message.ToString());
                     }
-                else if(operation == "DROP") 
+                else if (operation == "DROP")
                 {
                     MessageBox.Show("This action is not allowed.");
+                }
+                else if ((operation == "CREATE" && array[1] == "TYPE") || 
+                        (operation == "CREATE" && array[3] == "TYPE"))
+                {
+                    try
+                    {
+                        if (array[1] == "TYPE" && array[3] != "AS")
+                        {
+                            Console.WriteLine("NORMAL branch");
+                            MessageBox.Show("Type was compiled with errors, "
+                               + "please try again with CREATE OR REPLACE ");
+                        }
+
+                        if (array[3] == "TYPE"  && array[5] != "AS" )
+                        {
+                            Console.WriteLine("REPLACE branch");
+                            MessageBox.Show("Type was compiled with errors, "
+                               + "please try again with CREATE OR REPLACE ");
+                        }
+                        command.CommandText = query;
+                        command.CommandType = CommandType.Text;
+                        int rows = command.ExecuteNonQuery();
+                        MessageBox.Show("Query Ok. " + rows.ToString() + " rows were affected");
+                    }
+                    catch (Exception error)
+                    {
+                        MessageBox.Show(error.Message.ToString());
+                        Console.WriteLine(error);
+                    }
                 }
                 else
                 {
