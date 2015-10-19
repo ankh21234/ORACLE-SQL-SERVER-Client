@@ -115,6 +115,18 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Views\OracleDll.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\OracleDll.Designer.cs">
+      <DependentUpon>OracleDll.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\OracleIndexes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\OracleIndexes.designer.cs">
+      <DependentUpon>OracleIndexes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\OracleSessionDetails.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -206,6 +218,12 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Views\OracleDll.resx">
+      <DependentUpon>OracleDll.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\OracleIndexes.resx">
+      <DependentUpon>OracleIndexes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\OracleSessionDetails.resx">
       <DependentUpon>OracleSessionDetails.cs</DependentUpon>
     </EmbeddedResource>

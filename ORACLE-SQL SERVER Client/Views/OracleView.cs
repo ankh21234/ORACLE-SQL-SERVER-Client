@@ -190,6 +190,14 @@ namespace ORACLE_SQL_SERVER_Client.Views
                     {
                         subObjectNode.ContextMenuStrip = this.ViewTableViewMenu;
                     }
+                    if (i == "INDEX")
+                    {
+                        subObjectNode.ContextMenuStrip = this.IndexcontextMenuStrip; 
+                    }
+                    if (i == "PROCEDURE" || i == "TRIGGER" || i == "SEQUENCE")
+                    {
+                        subObjectNode.ContextMenuStrip = this.ProceduresFunctionsContextMenu; 
+                    }
 
                     objectNode.Nodes.Add(subObjectNode);
 
@@ -224,6 +232,36 @@ namespace ORACLE_SQL_SERVER_Client.Views
         private void OracleView_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void dDLToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            String objectType = this.OracleObjects.SelectedNode.Parent.Text;
+            String objectName = this.OracleObjects.SelectedNode.Text;
+            new OracleDll(dbConnection, objectType, objectName).ShowDialog();
+
+
+        }
+
+        private void dDLToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            String objectType = this.OracleObjects.SelectedNode.Parent.Text;
+            String objectName = this.OracleObjects.SelectedNode.Text;
+            new OracleDll(dbConnection, objectType, objectName).ShowDialog();
+
+        }
+
+        private void viewToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            String objectName = this.OracleObjects.SelectedNode.Text;
+            new OracleIndexes(dbConnection, objectName).ShowDialog();
+        }
+
+        private void toolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            String objectType = this.OracleObjects.SelectedNode.Parent.Text;
+            String objectName = this.OracleObjects.SelectedNode.Text;
+            new OracleDll(dbConnection, objectType, objectName).ShowDialog();
         }
     }
 }

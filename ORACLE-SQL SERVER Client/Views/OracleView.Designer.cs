@@ -40,18 +40,22 @@
             this.OracleObjects = new System.Windows.Forms.TreeView();
             this.ViewTableViewMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.ViewTableView = new System.Windows.Forms.ToolStripMenuItem();
+            this.dDLToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ProceduresFunctionsContextMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.extraOptions = new System.Windows.Forms.GroupBox();
             this.tablespaceButton = new System.Windows.Forms.Button();
             this.sessionsButton = new System.Windows.Forms.Button();
             this.SqlServerImage = new System.Windows.Forms.Panel();
+            this.IndexcontextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dDLToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.OracleResults)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.ViewTableViewMenu.SuspendLayout();
             this.ProceduresFunctionsContextMenu.SuspendLayout();
             this.extraOptions.SuspendLayout();
+            this.IndexcontextMenuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // OracleConsole
@@ -116,7 +120,8 @@
             // ViewTableViewMenu
             // 
             this.ViewTableViewMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ViewTableView});
+            this.ViewTableView,
+            this.dDLToolStripMenuItem});
             this.ViewTableViewMenu.Name = "ViewTableViewMenu";
             resources.ApplyResources(this.ViewTableViewMenu, "ViewTableViewMenu");
             // 
@@ -126,11 +131,16 @@
             resources.ApplyResources(this.ViewTableView, "ViewTableView");
             this.ViewTableView.Click += new System.EventHandler(this.ViewTableView_Click);
             // 
+            // dDLToolStripMenuItem
+            // 
+            this.dDLToolStripMenuItem.Name = "dDLToolStripMenuItem";
+            resources.ApplyResources(this.dDLToolStripMenuItem, "dDLToolStripMenuItem");
+            this.dDLToolStripMenuItem.Click += new System.EventHandler(this.dDLToolStripMenuItem_Click);
+            // 
             // ProceduresFunctionsContextMenu
             // 
             this.ProceduresFunctionsContextMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItem1,
-            this.toolStripMenuItem2});
+            this.toolStripMenuItem1});
             this.ProceduresFunctionsContextMenu.Name = "ViewTableView";
             resources.ApplyResources(this.ProceduresFunctionsContextMenu, "ProceduresFunctionsContextMenu");
             // 
@@ -138,11 +148,7 @@
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
             resources.ApplyResources(this.toolStripMenuItem1, "toolStripMenuItem1");
-            // 
-            // toolStripMenuItem2
-            // 
-            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            resources.ApplyResources(this.toolStripMenuItem2, "toolStripMenuItem2");
+            this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
             // 
             // extraOptions
             // 
@@ -172,6 +178,26 @@
             resources.ApplyResources(this.SqlServerImage, "SqlServerImage");
             this.SqlServerImage.Name = "SqlServerImage";
             // 
+            // IndexcontextMenuStrip
+            // 
+            this.IndexcontextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.viewToolStripMenuItem,
+            this.dDLToolStripMenuItem1});
+            this.IndexcontextMenuStrip.Name = "IndexcontextMenuStrip";
+            resources.ApplyResources(this.IndexcontextMenuStrip, "IndexcontextMenuStrip");
+            // 
+            // viewToolStripMenuItem
+            // 
+            this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
+            resources.ApplyResources(this.viewToolStripMenuItem, "viewToolStripMenuItem");
+            this.viewToolStripMenuItem.Click += new System.EventHandler(this.viewToolStripMenuItem_Click);
+            // 
+            // dDLToolStripMenuItem1
+            // 
+            this.dDLToolStripMenuItem1.Name = "dDLToolStripMenuItem1";
+            resources.ApplyResources(this.dDLToolStripMenuItem1, "dDLToolStripMenuItem1");
+            this.dDLToolStripMenuItem1.Click += new System.EventHandler(this.dDLToolStripMenuItem1_Click);
+            // 
             // OracleView
             // 
             resources.ApplyResources(this, "$this");
@@ -189,6 +215,7 @@
             this.ViewTableViewMenu.ResumeLayout(false);
             this.ProceduresFunctionsContextMenu.ResumeLayout(false);
             this.extraOptions.ResumeLayout(false);
+            this.IndexcontextMenuStrip.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -207,10 +234,13 @@
         private System.Windows.Forms.ToolStripMenuItem ViewTableView;
         private System.Windows.Forms.ContextMenuStrip ProceduresFunctionsContextMenu;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
         private System.Windows.Forms.GroupBox extraOptions;
         private System.Windows.Forms.Button tablespaceButton;
         private System.Windows.Forms.Button sessionsButton;
         private System.Windows.Forms.Panel SqlServerImage;
+        private System.Windows.Forms.ToolStripMenuItem dDLToolStripMenuItem;
+        private System.Windows.Forms.ContextMenuStrip IndexcontextMenuStrip;
+        private System.Windows.Forms.ToolStripMenuItem dDLToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem viewToolStripMenuItem;
     }
 }
