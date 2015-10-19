@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("INDEX");
-            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Database", new System.Windows.Forms.TreeNode[] {
-            treeNode1});
+            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("INDEX");
+            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("Database", new System.Windows.Forms.TreeNode[] {
+            treeNode3});
             this.SQLServerConsole = new System.Windows.Forms.RichTextBox();
             this.SQLServerResults = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -43,18 +43,28 @@
             this.TableViewContextMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.ViewTableView = new System.Windows.Forms.ToolStripMenuItem();
             this.dDLToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.indexDDLToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ProceduresFunctionsContextMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.ViewProceduresFunctions = new System.Windows.Forms.ToolStripMenuItem();
             this.extraOptions = new System.Windows.Forms.GroupBox();
             this.fileGroupButton = new System.Windows.Forms.Button();
             this.sessionsButton = new System.Windows.Forms.Button();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.VIewMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.viewToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.dDLToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.SqlServerImage = new System.Windows.Forms.Panel();
-            this.indexDDLToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.IndexMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.viewToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.SQLServerResults)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.TableViewContextMenu.SuspendLayout();
             this.ProceduresFunctionsContextMenu.SuspendLayout();
             this.extraOptions.SuspendLayout();
+            this.contextMenuStrip1.SuspendLayout();
+            this.VIewMenuStrip.SuspendLayout();
+            this.IndexMenuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // SQLServerConsole
@@ -136,14 +146,14 @@
             // 
             this.SQLServerObjects.Location = new System.Drawing.Point(13, 13);
             this.SQLServerObjects.Name = "SQLServerObjects";
-            treeNode1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            treeNode1.Name = "Node0";
-            treeNode1.Text = "INDEX";
-            treeNode2.ForeColor = System.Drawing.Color.Black;
-            treeNode2.Name = "Database";
-            treeNode2.Text = "Database";
+            treeNode3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            treeNode3.Name = "Node0";
+            treeNode3.Text = "INDEX";
+            treeNode4.ForeColor = System.Drawing.Color.Black;
+            treeNode4.Name = "Database";
+            treeNode4.Text = "Database";
             this.SQLServerObjects.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode2});
+            treeNode4});
             this.SQLServerObjects.Size = new System.Drawing.Size(193, 667);
             this.SQLServerObjects.TabIndex = 6;
             this.SQLServerObjects.MouseUp += new System.Windows.Forms.MouseEventHandler(this.SQLServerObjects_MouseUp);
@@ -155,13 +165,13 @@
             this.dDLToolStripMenuItem,
             this.indexDDLToolStripMenuItem});
             this.TableViewContextMenu.Name = "TableViewContextMenu";
-            this.TableViewContextMenu.Size = new System.Drawing.Size(153, 92);
+            this.TableViewContextMenu.Size = new System.Drawing.Size(128, 70);
             // 
             // ViewTableView
             // 
             this.ViewTableView.AutoToolTip = true;
             this.ViewTableView.Name = "ViewTableView";
-            this.ViewTableView.Size = new System.Drawing.Size(152, 22);
+            this.ViewTableView.Size = new System.Drawing.Size(127, 22);
             this.ViewTableView.Text = "View";
             this.ViewTableView.ToolTipText = "View table properties";
             this.ViewTableView.Click += new System.EventHandler(this.ViewTableView_Click);
@@ -169,9 +179,16 @@
             // dDLToolStripMenuItem
             // 
             this.dDLToolStripMenuItem.Name = "dDLToolStripMenuItem";
-            this.dDLToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.dDLToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
             this.dDLToolStripMenuItem.Text = "DDL";
             this.dDLToolStripMenuItem.Click += new System.EventHandler(this.dDLToolStripMenuItem_Click);
+            // 
+            // indexDDLToolStripMenuItem
+            // 
+            this.indexDDLToolStripMenuItem.Name = "indexDDLToolStripMenuItem";
+            this.indexDDLToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
+            this.indexDDLToolStripMenuItem.Text = "Index DDL";
+            this.indexDDLToolStripMenuItem.Click += new System.EventHandler(this.indexDDLToolStripMenuItem_Click);
             // 
             // ProceduresFunctionsContextMenu
             // 
@@ -220,6 +237,43 @@
             this.sessionsButton.UseVisualStyleBackColor = true;
             this.sessionsButton.Click += new System.EventHandler(this.sessionsButton_Click);
             // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.viewToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(100, 26);
+            this.contextMenuStrip1.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip1_Opening);
+            // 
+            // viewToolStripMenuItem
+            // 
+            this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
+            this.viewToolStripMenuItem.Size = new System.Drawing.Size(99, 22);
+            this.viewToolStripMenuItem.Text = "View";
+            this.viewToolStripMenuItem.Click += new System.EventHandler(this.viewToolStripMenuItem_Click);
+            // 
+            // VIewMenuStrip
+            // 
+            this.VIewMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.viewToolStripMenuItem1,
+            this.dDLToolStripMenuItem1});
+            this.VIewMenuStrip.Name = "VIewMenuStrip";
+            this.VIewMenuStrip.Size = new System.Drawing.Size(100, 48);
+            // 
+            // viewToolStripMenuItem1
+            // 
+            this.viewToolStripMenuItem1.Name = "viewToolStripMenuItem1";
+            this.viewToolStripMenuItem1.Size = new System.Drawing.Size(99, 22);
+            this.viewToolStripMenuItem1.Text = "View";
+            this.viewToolStripMenuItem1.Click += new System.EventHandler(this.viewToolStripMenuItem1_Click);
+            // 
+            // dDLToolStripMenuItem1
+            // 
+            this.dDLToolStripMenuItem1.Name = "dDLToolStripMenuItem1";
+            this.dDLToolStripMenuItem1.Size = new System.Drawing.Size(99, 22);
+            this.dDLToolStripMenuItem1.Text = "DDL";
+            this.dDLToolStripMenuItem1.Click += new System.EventHandler(this.dDLToolStripMenuItem1_Click);
+            // 
             // SqlServerImage
             // 
             this.SqlServerImage.BackgroundImage = global::ORACLE_SQL_SERVER_Client.Properties.Resources.SqlServerIcon;
@@ -229,12 +283,19 @@
             this.SqlServerImage.Size = new System.Drawing.Size(283, 258);
             this.SqlServerImage.TabIndex = 8;
             // 
-            // indexDDLToolStripMenuItem
+            // IndexMenuStrip
             // 
-            this.indexDDLToolStripMenuItem.Name = "indexDDLToolStripMenuItem";
-            this.indexDDLToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.indexDDLToolStripMenuItem.Text = "Index DDL";
-            this.indexDDLToolStripMenuItem.Click += new System.EventHandler(this.indexDDLToolStripMenuItem_Click);
+            this.IndexMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.viewToolStripMenuItem2});
+            this.IndexMenuStrip.Name = "IndexMenuStrip";
+            this.IndexMenuStrip.Size = new System.Drawing.Size(153, 48);
+            // 
+            // viewToolStripMenuItem2
+            // 
+            this.viewToolStripMenuItem2.Name = "viewToolStripMenuItem2";
+            this.viewToolStripMenuItem2.Size = new System.Drawing.Size(152, 22);
+            this.viewToolStripMenuItem2.Text = "View";
+            this.viewToolStripMenuItem2.Click += new System.EventHandler(this.viewToolStripMenuItem2_Click);
             // 
             // SQLServerView
             // 
@@ -255,6 +316,9 @@
             this.TableViewContextMenu.ResumeLayout(false);
             this.ProceduresFunctionsContextMenu.ResumeLayout(false);
             this.extraOptions.ResumeLayout(false);
+            this.contextMenuStrip1.ResumeLayout(false);
+            this.VIewMenuStrip.ResumeLayout(false);
+            this.IndexMenuStrip.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -280,5 +344,12 @@
         private System.Windows.Forms.Panel SqlServerImage;
         private System.Windows.Forms.ToolStripMenuItem dDLToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem indexDDLToolStripMenuItem;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem viewToolStripMenuItem;
+        private System.Windows.Forms.ContextMenuStrip VIewMenuStrip;
+        private System.Windows.Forms.ToolStripMenuItem viewToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem dDLToolStripMenuItem1;
+        private System.Windows.Forms.ContextMenuStrip IndexMenuStrip;
+        private System.Windows.Forms.ToolStripMenuItem viewToolStripMenuItem2;
     }
 }

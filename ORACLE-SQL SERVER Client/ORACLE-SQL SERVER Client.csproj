@@ -245,6 +245,9 @@
     <EmbeddedResource Include="Views\SQLServerFileGroupData.resx">
       <DependentUpon>SQLServerFileGroupData.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\SQLServerIndexViewer.resx">
+      <DependentUpon>SQLServerIndexViewer.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\SQLServerSessionDetails.resx">
       <DependentUpon>SQLServerSessionDetails.cs</DependentUpon>
     </EmbeddedResource>
@@ -305,6 +308,9 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resources\DDL_Extractor_Index_Proc.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\getindex.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

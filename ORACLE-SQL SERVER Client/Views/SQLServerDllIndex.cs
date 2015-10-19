@@ -70,9 +70,15 @@ namespace ORACLE_SQL_SERVER_Client.Views
 
             foreach (DataRow row in data.Rows)
             {
-                String ColumnData = row[0].ToString();
-                ColumnData = ColumnData.Substring( ColumnData.IndexOf("CREATE")); 
-                this.richTextBox1.AppendText(ColumnData);
+                try {
+                    String ColumnData = row[0].ToString();
+                    ColumnData = ColumnData.Substring(ColumnData.IndexOf("CREATE"));
+                    this.richTextBox1.AppendText(ColumnData);
+                }
+                catch (Exception e)
+                {
+
+                }
             }
 
             query = "DROP PROCEDURE [dbo].[sp_GetDDL] ;";

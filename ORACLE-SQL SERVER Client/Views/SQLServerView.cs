@@ -123,14 +123,9 @@ namespace ORACLE_SQL_SERVER_Client.Views
 
             TableViewerSQLServer tableViewer;
             String name = this.SQLServerObjects.SelectedNode.Text;
-            if (this.SQLServerObjects.SelectedNode.Parent.Text == "VIEW")
-            {
-                tableViewer = new TableViewerSQLServer(name, dbConnection, true);
-            }
-            else
-            {
+    
                 tableViewer = new TableViewerSQLServer(name, dbConnection, false);
-            }
+            
             tableViewer.ShowDialog();
         }
 
@@ -197,14 +192,19 @@ namespace ORACLE_SQL_SERVER_Client.Views
                     subObjectNode.Name = j;
                     subObjectNode.Text = j;
                     subObjectNode.ForeColor = System.Drawing.Color.Black;
-                    if (i == "USER_TABLE" || i == "VIEW")
+                    if (i == "USER_TABLE" )
                     {
                         subObjectNode.ContextMenuStrip = this.TableViewContextMenu;
+                    }
+                    if (i == "VIEW")
+                    {
+                        subObjectNode.ContextMenuStrip = this.VIewMenuStrip;
                     }
                     if (i == "SQL_STORED_PROCEDURE")
                     {
                         subObjectNode.ContextMenuStrip = this.ProceduresFunctionsContextMenu;
                     }
+        
                     objectNode.Nodes.Add(subObjectNode);
 
                 }
@@ -226,7 +226,12 @@ namespace ORACLE_SQL_SERVER_Client.Views
             {
                 TreeNode indexNode = new TreeNode();
                 indexNode.ForeColor = System.Drawing.Color.Black;
-                indexes.Nodes.Add(reader["INDEXNAME"].ToString());
+                indexNode.ContextMenuStrip = this.IndexMenuStrip;
+                indexNode.Name = reader["INDEXNAME"].ToString();
+                indexNode.Text = reader["INDEXNAME"].ToString();
+                indexes.Nodes.Add(indexNode);
+                
+
             }
             this.SQLServerObjects.Nodes[0].Nodes.Add(indexes);
             reader.Close();
@@ -279,6 +284,45 @@ namespace ORACLE_SQL_SERVER_Client.Views
             Views.SQLServerDllIndex tableViewer = new SQLServerDllIndex(tableName, dbConnection, false);
             tableViewer.ShowDialog();
 
+        }
+
+        private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
+        {
+
+        }
+
+        private void viewToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            String tableName = this.SQLServerObjects.SelectedNode.Text;
+            Views.SQLServerDllIndex tableViewer = new SQLServerDllIndex(tableName, dbConnection, false);
+            tableViewer.ShowDialog();
+
+        }
+
+        private void viewToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            TableViewerSQLServer tableViewer;
+            String name = this.SQLServerObjects.SelectedNode.Text;
+    
+                tableViewer = new TableViewerSQLServer(name, dbConnection, true);
+
+            tableViewer.ShowDialog();
+
+        }
+
+        private void dDLToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            String tableName = this.SQLServerObjects.SelectedNode.Text;
+            Views.SQLServerDll tableViewer = new SQLServerDll(tableName, dbConnection, false);
+            tableViewer.ShowDialog();
+
+        }
+
+        private void viewToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            String tableName = this.SQLServerObjects.SelectedNode.Text;
+            Views.SQLServerIndexViewer tableViewer = new SQLServerIndexViewer(tableName, dbConnection, false);
+            tableViewer.ShowDialog();
         }
     }
 }
