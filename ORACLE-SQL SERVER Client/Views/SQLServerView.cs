@@ -200,7 +200,7 @@ namespace ORACLE_SQL_SERVER_Client.Views
                     {
                         subObjectNode.ContextMenuStrip = this.VIewMenuStrip;
                     }
-                    if (i == "SQL_STORED_PROCEDURE")
+                    if (i == "SQL_STORED_PROCEDURE" || i == "SQL_SCALAR_FUNCTION" || i == "SQL_TRIGGER")
                     {
                         subObjectNode.ContextMenuStrip = this.ProceduresFunctionsContextMenu;
                     }
