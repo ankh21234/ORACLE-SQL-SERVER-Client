@@ -225,7 +225,7 @@ namespace ORACLE_SQL_SERVER_Client.Views
                     {
                         subObjectNode.ContextMenuStrip = this.IndexcontextMenuStrip; 
                     }
-                    if (i == "PROCEDURE" || i == "TRIGGER" || i == "SEQUENCE")
+                    if (i == "PROCEDURE" || i == "TRIGGER" || i == "FUNCTION")
                     {
                         subObjectNode.ContextMenuStrip = this.ProceduresFunctionsContextMenu; 
                     }
