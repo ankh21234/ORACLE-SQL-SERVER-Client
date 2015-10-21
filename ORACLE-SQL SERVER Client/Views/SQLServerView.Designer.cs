@@ -56,6 +56,7 @@
             this.SqlServerImage = new System.Windows.Forms.Panel();
             this.IndexMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.viewToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.indexDDLToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.SQLServerResults)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.TableViewContextMenu.SuspendLayout();
@@ -161,9 +162,10 @@
             // 
             this.TableViewContextMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ViewTableView,
-            this.dDLToolStripMenuItem});
+            this.dDLToolStripMenuItem,
+            this.indexDDLToolStripMenuItem});
             this.TableViewContextMenu.Name = "TableViewContextMenu";
-            this.TableViewContextMenu.Size = new System.Drawing.Size(153, 70);
+            this.TableViewContextMenu.Size = new System.Drawing.Size(153, 92);
             // 
             // ViewTableView
             // 
@@ -288,6 +290,13 @@
             this.viewToolStripMenuItem2.Text = "View";
             this.viewToolStripMenuItem2.Click += new System.EventHandler(this.viewToolStripMenuItem2_Click);
             // 
+            // indexDDLToolStripMenuItem
+            // 
+            this.indexDDLToolStripMenuItem.Name = "indexDDLToolStripMenuItem";
+            this.indexDDLToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.indexDDLToolStripMenuItem.Text = "Index DDL";
+            this.indexDDLToolStripMenuItem.Click += new System.EventHandler(this.indexDDLToolStripMenuItem_Click);
+            // 
             // SQLServerView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -341,5 +350,6 @@
         private System.Windows.Forms.ToolStripMenuItem dDLToolStripMenuItem1;
         private System.Windows.Forms.ContextMenuStrip IndexMenuStrip;
         private System.Windows.Forms.ToolStripMenuItem viewToolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem indexDDLToolStripMenuItem;
     }
 }
